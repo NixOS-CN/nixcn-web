@@ -4,41 +4,26 @@
 // see the documentation: https://zed.dev/docs/configuring-zed#settings-files
 
 {
-  "format_on_save": "on",
-  "formatter": "prettier",
-  "languages": {
-    "TypeScript": {
-      "language_servers": [
-        "typescript-language-server",
-        "!vtsls",
-        "!deno",
-        "..."
-      ]
-    },
-    "TSX": {
-      "language_servers": [
-        "typescript-language-server",
-        "!vtsls",
-        "!deno",
-        "..."
-      ]
-    },
-    "JavaScript": {
-      "language_servers": [
-        "typescript-language-server",
-        "!vtsls",
-        "!deno",
-        "..."
-      ],
-      "formatter": {
-        "external": {
-          "command": "prettier",
-          "arguments": ["--stdin-filepath", "{buffer_path}"]
+    "format_on_save": "on",
+    "formatter": "prettier",
+    "languages": {
+        "TypeScript": {
+            "language_servers": ["typescript-language-server", "!vtsls", "!deno", "..."]
+        },
+        "TSX": {
+            "language_servers": ["typescript-language-server", "!vtsls", "!deno", "..."]
+        },
+        "JavaScript": {
+            "language_servers": ["typescript-language-server", "!vtsls", "!deno", "..."],
+            "formatter": {
+                "external": {
+                    "command": "prettier",
+                    "arguments": ["--stdin-filepath", "{buffer_path}"]
+                }
+            },
+            "code_actions_on_format": {
+                "source.fixAll.eslint": true
+            }
         }
-      },
-      "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      }
     }
-  }
 }
