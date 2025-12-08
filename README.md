@@ -11,13 +11,14 @@
 7. **Commit message written in english** _[MUST]_
 8. **Split commits for large or multi-part changes** _[OPTION]_
 9. **Use OpenPGP/SSH for commit signing** _[OPTION]_
-0. **Have fun contributing :)** _[VERY NECESSARY]_
+10. **Have fun contributing :)** _[VERY NECESSARY]_
 
 ## Toolchain
 
 - Zed Editor
 - Node 22
-- Yarn v2
+- Pnpm 10.24
+- Corepack
 - Cloudflare
 
 ## Commands
