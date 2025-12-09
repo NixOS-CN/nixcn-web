@@ -9,7 +9,7 @@ import mdx from '@astrojs/mdx';
 export default defineConfig({
     integrations: [
         starlight({
-            title: 'NixCN',
+            title: 'Nix CN',
             defaultLocale: 'root',
             logo: {
                 light: './src/assets/nix-cn.svg',
