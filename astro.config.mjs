@@ -27,9 +27,9 @@ export default defineConfig({
             },
             social: [
                 {
-                    icon: 'github',
-                    label: 'GitHub',
-                    href: 'https://github.com/withastro/starlight',
+                    icon: 'seti:git',
+                    label: 'Source',
+                    href: 'https://git.sne.moe/sugar/nixcn-web',
                 },
             ],
             sidebar: [],
