@@ -11,6 +11,11 @@ export default defineConfig({
         starlight({
             title: 'NixCN',
             defaultLocale: 'root',
+            logo: {
+                light: './src/assets/nix-cn.svg',
+                dark: './src/assets/nix-cn-dark.svg',
+                replacesTitle: true,
+            },
             locales: {
                 root: {
                     label: '简体中文',
