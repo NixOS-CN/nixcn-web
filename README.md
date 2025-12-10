@@ -21,7 +21,6 @@
 - Node 22
 - Pnpm 10
 - Corepack
-- Cloudflare
 - Zed Editor
 
 ## Maintainer
