@@ -5,6 +5,7 @@ import mdx from '@astrojs/mdx';
 
 // https://astro.build/config
 export default defineConfig({
+    site: 'https://meetup.nixos-cn.org',
     integrations: [
         starlight({
             title: 'Nix CN',
@@ -27,7 +28,7 @@ export default defineConfig({
                 {
                     icon: 'seti:git',
                     label: 'Source',
-                    href: 'https://git.sne.moe/sugar/nixcn-web',
+                    href: 'https://github.com/NixOS-CN/nixcn-web',
                 },
             ],
             sidebar: ['meetup-2-guide'],
