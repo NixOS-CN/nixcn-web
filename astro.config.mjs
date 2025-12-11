@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import mdx from '@astrojs/mdx';
+import starlightUITweaks from 'starlight-ui-tweaks';
 
 // https://astro.build/config
 export default defineConfig({
@@ -32,7 +33,20 @@ export default defineConfig({
                 },
             ],
             sidebar: ['meetup-2-guide', 'badge-customization'],
-            plugins: [],
+            plugins: [
+                starlightUITweaks({
+                    navbarLinks: [
+                        { label: 'Nix CN 社区 ↗', href: 'https://nixos-cn.org/' },
+                    ],
+                    locales: {
+                        en: {
+                            navbarLinks: [
+                                { label: "Nix CN Community ↗", href: "https://nixos-cn.org/" },
+                            ],
+                        },
+                    },
+                }),
+            ],
         }),
         mdx(),
     ],
