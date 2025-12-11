@@ -1,0 +1,42 @@
+---
+title: '纪念品定制说明'
+description: '纪念品定制说明'
+sidebar:
+    label: '纪念品定制说明'
+---
+import { Image } from 'astro:assets';
+import { LinkButton } from '@astrojs/starlight/components';
+import BadgeTemplates from '@components/BadgeTemplates.astro';
+import Nameplate from '@assets/Nameplate.webp';
+
+# 参会证定制
+
+我们提供三种预设的参会证模板：
+
+<BadgeTemplates />
+
+对于所有参会者，默认会使用第一种模板样式（Nix 配色）制作参会证。
+
+参会证上的 `#name` 和 `#type` 字段，将由您在报名时填写的信息和您的与会身份（参会者/志愿者/讲者）决定。
+
+如果需要选择模板或有其他定制需求，您可以在这里提交申请：
+
+<LinkButton href='https://forms.cloud.microsoft/r/bJMeW1iu4C' icon='external' variant='secondary' iconPlacement='end'>
+    填写纪念品定制需求表
+</LinkButton>
+
+※ 目前支持以下内容的定制。请在「纪念品定制需求表」的「参会证定制」分区中进行填写。
+- 下方文字颜色定制
+    - 请提供具体需要修改的文字位置和颜色HEX码（例：`#5277C3`）。
+- 右下角雪花标志定制
+    - 请使用[此文件](https://meetup-files.nixos.org.cn/nixos-template.svg)作为定制基础进行修改。
+    - 请勿修改原文件的比例。
+    - 修改后，请维持原比例导出**透明底 PNG 文件**，并使用「纪念品定制需求表」中填写的邮件地址，发送文件到 [nixcn-meetup@sne.moe](mailto:nixcn-meetup@sne.moe)。
+
+# 铭牌定制
+
+<Image src={Nameplate} alt="Nameplate" />
+
+※ 纪念品铭牌仅支持定制副标题。请在上述「纪念品定制需求表」的「铭牌定制」分区中一并填写。
+- 纪念品铭牌为金属切削制成。
+- 副标题字数应小于 20 个英文字符宽度（中文字符宽度计为 2）。
