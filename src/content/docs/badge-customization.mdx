@@ -1,0 +1,29 @@
+---
+title: '会议名牌定制说明'
+description: '会议名牌定制说明'
+sidebar:
+    label: '会议名牌定制说明'
+---
+import BadgeTemplates from '@components/BadgeTemplates.astro';
+import { LinkButton } from '@astrojs/starlight/components';
+
+我们提供三种预设的会议名牌模板：
+
+<BadgeTemplates />
+
+对于所有参会者，默认会使用第一种模板样式（Nix 配色）制作名牌。
+
+名牌上的 `#name` 和 `#type` 字段，将由您在报名时填写的信息和您的与会身份（参会者/志愿者/讲者）决定。
+
+如果需要选择模板或有其他定制需求，您可以在这里提交申请：
+
+<LinkButton href='#' icon='external' variant='secondary' iconPlacement='end'>
+    填写名牌定制需求表（尚未开放）
+</LinkButton>
+
+※ 目前支持以下内容的定制：
+- `#name` 定制（可以与报名时填写的昵称不同）
+- 下方文字颜色定制
+- Flake 标志定制
+    - 请使用[此文件](https://meetup-files.nixos.org.cn/nixos-template.svg)作为定制基础。
+    - 请勿修改原文件的比例。

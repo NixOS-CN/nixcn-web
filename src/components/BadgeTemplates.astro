@@ -1,0 +1,25 @@
+---
+import NormalBadgeTemplate from '@assets/badges/normal.svg';
+import RainbowBadgeTemplate from '@assets/badges/rainbow.svg';
+import TransBadgeTemplate from '@assets/badges/trans.svg';
+---
+
+<div class="badge-row">
+    <NormalBadgeTemplate class="badge" />
+    <RainbowBadgeTemplate class="badge" />
+    <TransBadgeTemplate class="badge" />
+</div>
+
+<style>
+    .badge-row {
+        display: flex;
+        gap: 1.5rem;
+        align-items: flex-start;
+    }
+
+    .badge {
+        margin-top: 0;
+        width: clamp(180px, 24vw, 240px);
+        height: auto;
+    }
+</style>

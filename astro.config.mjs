@@ -31,7 +31,7 @@ export default defineConfig({
                     href: 'https://github.com/NixOS-CN/nixcn-web',
                 },
             ],
-            sidebar: ['meetup-2-guide'],
+            sidebar: ['meetup-2-guide', 'badge-customization'],
             plugins: [],
         }),
         mdx(),
