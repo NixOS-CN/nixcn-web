@@ -27,3 +27,5 @@
 
 - Asai Neko <sugar@sne.moe>
 - Noa Virellia <noa@requiem.garden>
+- Sizhe Zhao <prc.zhao@outlook.com>
+- Haonan Chen <chn@chn.moe>
