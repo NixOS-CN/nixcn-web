@@ -32,7 +32,7 @@ export default defineConfig({
                     href: 'https://github.com/NixOS-CN/nixcn-web',
                 },
             ],
-            sidebar: ['meetup-2-guide', 'souvenir-customization'],
+            sidebar: ['meetup-2-guide', 'souvenir-customization', 'volunteers'],
             plugins: [
                 starlightUITweaks({
                     navbarLinks: [
