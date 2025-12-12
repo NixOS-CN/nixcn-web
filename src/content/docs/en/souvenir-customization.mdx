@@ -1,0 +1,46 @@
+---
+title: 'Souvenir Customization'
+description: 'Souvenir Customization'
+sidebar:
+    label: 'Souvenir Customization'
+---
+import { Image } from 'astro:assets';
+import { LinkButton } from '@astrojs/starlight/components';
+import BadgeTemplates from '@components/BadgeTemplates.astro';
+import Nameplate from '@assets/Nameplate.webp';
+
+# Attendee Badge Customization
+
+We offer three attendee badge templates:
+
+<BadgeTemplates />
+
+For all attendees, the first template style (Nix color scheme) will be used by default.
+
+The `#name` and `#type` fields on the badge will be determined by the information you provide during registration and your attendance role (Attendee / Volunteer / Speaker).
+
+To select a different template or make other customizations, file a request here:
+
+<LinkButton href='https://forms.cloud.microsoft/r/bJMeW1iu4C' icon='external' variant='secondary' iconPlacement='end'>
+    Fill a Souvenir Customization Request form (Chinese)
+</LinkButton>
+
+※ The following customizations are currently supported.
+Please fill them out in the "Attendee Badge Customization" section of the Souvenir Customization Request Form.
+
+- color of the the text at bottom
+    - Please provide the specific location of the text to be modified and the color HEX code (e.g., `#5277C3`).
+- the snowflake logo in the bottom right Corner
+    - Please use [this file](https://meetup-files.nixos.org.cn/nixos-template.svg) as the basis for your customization.
+    - Please **do** keep the aspect ratio of the original file.
+    - After modification, please export a **PNG file with transparent background**, maintaining the original aspect ratio, and send the file to [nixcn-meetup@sne.moe](mailto:nixcn-meetup@sne.moe) using the email address provided in the Souvenir Customization Request form.
+
+# Name Plate Customization
+
+<Image src={Nameplate} alt="Nameplate" />
+
+※ The souvenir name plate only supports customization of the subtitle.
+Please fill this out in the Name Plate Customization section of the Souvenir Customization Request form mentioned above.
+
+- The souvenir name plate is made from cut metal.
+- The subtitle should be less than 20 half-width characters wide in English (full-width characters such as CJK characters each count as 2 half-width characters).
