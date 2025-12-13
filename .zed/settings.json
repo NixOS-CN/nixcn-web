@@ -15,16 +15,7 @@
             "language_servers": ["typescript-language-server", "!vtsls", "!deno", "..."]
         },
         "JavaScript": {
-            "language_servers": ["typescript-language-server", "!vtsls", "!deno", "..."],
-            "formatter": {
-                "external": {
-                    "command": "prettier",
-                    "arguments": ["--stdin-filepath", "{buffer_path}"]
-                }
-            },
-            "code_actions_on_format": {
-                "source.fixAll.eslint": true
-            }
+            "language_servers": ["typescript-language-server", "!vtsls", "!deno", "..."]
         }
     }
 }
