@@ -4,6 +4,7 @@ description: '纪念品定制说明'
 sidebar:
     label: '纪念品定制说明'
 ---
+
 import { Image } from 'astro:assets';
 import { LinkButton } from '@astrojs/starlight/components';
 import BadgeTemplates from '@components/BadgeTemplates.astro';
@@ -26,6 +27,7 @@ import Nameplate from '@assets/nameplate.webp';
 </LinkButton>
 
 ※ 目前支持以下内容的定制。请在「纪念品定制需求表」的「参会证定制」分区中进行填写。
+
 - 下方文字颜色定制
     - 请提供具体需要修改的文字位置和颜色HEX码（例：`#5277C3`）。
 - 右下角雪花标志定制
@@ -35,8 +37,9 @@ import Nameplate from '@assets/nameplate.webp';
 
 # 铭牌定制
 
-<Image src={Nameplate} alt="Nameplate" />
+<Image src={Nameplate} alt='Nameplate' />
 
 ※ 纪念品铭牌仅支持定制副标题。请在上述「纪念品定制需求表」的「铭牌定制」分区中一并填写。
+
 - 纪念品铭牌为金属切削制成。
 - 副标题字数应小于 20 个英文字符宽度（中文字符宽度计为 2）。
