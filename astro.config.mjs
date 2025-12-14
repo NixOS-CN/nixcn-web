@@ -32,17 +32,13 @@ export default defineConfig({
                     href: 'https://github.com/NixOS-CN/nixcn-web',
                 },
             ],
-            sidebar: ['meetup-2-guide', 'souvenir-customization', 'volunteers'],
+            sidebar: ['meetup-2-guide', 'souvenir-customization', 'volunteers', 'code-of-conduct'],
             plugins: [
                 starlightUITweaks({
-                    navbarLinks: [
-                        { label: 'Nix CN 社区 ↗', href: 'https://nixos-cn.org/' },
-                    ],
+                    navbarLinks: [{ label: 'Nix CN 社区 ↗', href: 'https://nixos-cn.org/' }],
                     locales: {
                         en: {
-                            navbarLinks: [
-                                { label: "Nix CN Community ↗", href: "https://nixos-cn.org/" },
-                            ],
+                            navbarLinks: [{ label: 'Nix CN Community ↗', href: 'https://nixos-cn.org/' }],
                         },
                     },
                 }),
