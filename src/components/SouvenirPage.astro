@@ -10,6 +10,7 @@ interface Props {
 const { locale } = Astro.props;
 const t = getTranslations(locale);
 const tp = t.souvenir;
+const ts = tp.comingSoon;
 ---
 
 <BaseLayout title={tp.meta.title} description={tp.meta.description} lang={tp.meta.htmlLang}>
@@ -38,13 +39,47 @@ const tp = t.souvenir;
             <div class='card-content'>
                 <h2 class='card-title' id='feature-title'>{tp.card.title}</h2>
                 <p class='card-body'>{tp.card.body}</p>
-                <a class='cta-btn' href={tp.card.ctaUrl} target='_blank' rel='noopener noreferrer'>
+                <button type='button' class='cta-btn' id='souvenir-cta-btn' aria-haspopup='dialog'>
                     {tp.card.cta}
                     <img class='cta-arrow' src='/images/souvenir/cta-arrow.png' alt='' width='35' height='35' />
-                </a>
+                </button>
             </div>
         </section>
     </main>
+
+    <!-- ======= 等待开放弹窗 ======= -->
+    <div class='coming-soon-overlay' id='coming-soon-overlay' hidden aria-hidden='true'>
+        <button
+            type='button'
+            class='coming-soon-backdrop'
+            id='coming-soon-backdrop'
+            tabindex='-1'
+            aria-label={ts.ariaClose}></button>
+        <div
+            class='coming-soon-dialog'
+            role='dialog'
+            aria-modal='true'
+            aria-labelledby='coming-soon-title'
+            id='coming-soon-dialog'
+        >
+            <div class='coming-soon-icon' aria-hidden='true'>
+                <svg width='48' height='48' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                    <circle cx='24' cy='24' r='22' stroke='currentColor' stroke-width='2' opacity='0.25'></circle>
+                    <path
+                        d='M24 14v12l8 4'
+                        stroke='currentColor'
+                        stroke-width='2.5'
+                        stroke-linecap='round'
+                        stroke-linejoin='round'></path>
+                </svg>
+            </div>
+            <h3 class='coming-soon-title' id='coming-soon-title'>{ts.title}</h3>
+            <p class='coming-soon-body'>{ts.body}</p>
+            <button type='button' class='coming-soon-close' id='coming-soon-close'>
+                {ts.close}
+            </button>
+        </div>
+    </div>
 
     <!-- ======= 底部同心圆装饰（Figma 切图） ======= -->
     <div class='bottom-circles' aria-hidden='true'>
@@ -254,13 +289,15 @@ const tp = t.souvenir;
         gap: 10px;
         align-self: flex-start;
         padding: 18px 32px;
+        border: none;
         border-radius: 36px;
         background: #5277c3;
         color: #ffffff;
         font-size: 16px;
         font-weight: 500;
+        font-family: inherit;
         letter-spacing: -0.05em;
-        text-decoration: none;
+        cursor: pointer;
         transition:
             background 0.2s,
             transform 0.15s,
@@ -274,6 +311,133 @@ const tp = t.souvenir;
         background: #4269b8;
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(82, 119, 195, 0.35);
+    }
+
+    .cta-btn:focus-visible {
+        outline: 2px solid #5277c3;
+        outline-offset: 3px;
+    }
+
+    /* ===== Coming Soon Modal ===== */
+    @keyframes modalOverlayIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes modalDialogIn {
+        from {
+            opacity: 0;
+            transform: translateY(12px) scale(0.98);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    .coming-soon-overlay {
+        --modal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+    }
+
+    .coming-soon-overlay[hidden] {
+        display: none;
+    }
+
+    .coming-soon-overlay.is-open {
+        animation: modalOverlayIn 0.28s var(--modal-ease) both;
+    }
+
+    .coming-soon-backdrop {
+        position: absolute;
+        inset: 0;
+        border: none;
+        padding: 0;
+        margin: 0;
+        background: rgba(3, 15, 32, 0.45);
+        backdrop-filter: blur(4px);
+        cursor: pointer;
+    }
+
+    .coming-soon-dialog {
+        position: relative;
+        z-index: 1;
+        width: min(100%, 420px);
+        padding: 36px 32px 28px;
+        border-radius: 24px;
+        border: 2px solid rgba(155, 206, 241, 0.8);
+        background: #f9fbff;
+        box-shadow:
+            0 24px 48px rgba(3, 15, 32, 0.14),
+            0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+        text-align: center;
+        animation: modalDialogIn 0.35s var(--modal-ease) both;
+        animation-delay: 0.04s;
+    }
+
+    .coming-soon-icon {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 16px;
+        color: #5277c3;
+    }
+
+    .coming-soon-title {
+        margin: 0 0 12px;
+        font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+        font-weight: 600;
+        color: #030f20;
+        letter-spacing: -0.04em;
+        line-height: 1.3;
+    }
+
+    .coming-soon-body {
+        margin: 0 0 28px;
+        font-size: 15px;
+        line-height: 1.75;
+        color: #1a2332;
+        letter-spacing: -0.01em;
+    }
+
+    .coming-soon-close {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 140px;
+        padding: 14px 28px;
+        border: none;
+        border-radius: 36px;
+        background: #5277c3;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 500;
+        font-family: inherit;
+        letter-spacing: -0.03em;
+        cursor: pointer;
+        transition:
+            background 0.2s,
+            transform 0.15s,
+            box-shadow 0.2s;
+    }
+
+    .coming-soon-close:hover {
+        background: #4269b8;
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba(82, 119, 195, 0.35);
+    }
+
+    .coming-soon-close:focus-visible {
+        outline: 2px solid #5277c3;
+        outline-offset: 3px;
     }
 
     .cta-arrow {
@@ -416,5 +580,58 @@ const tp = t.souvenir;
             opacity: 1 !important;
             transform: translateX(-50%) !important;
         }
+
+        .coming-soon-overlay.is-open,
+        .coming-soon-dialog {
+            animation: none !important;
+        }
     }
 </style>
+
+<script>
+    function initComingSoonModal() {
+        const overlay = document.getElementById('coming-soon-overlay');
+        const openBtn = document.getElementById('souvenir-cta-btn');
+        const closeBtn = document.getElementById('coming-soon-close');
+        const backdrop = document.getElementById('coming-soon-backdrop');
+
+        if (!overlay || !openBtn || !closeBtn || !backdrop || overlay.dataset.init === 'true') {
+            return;
+        }
+
+        overlay.dataset.init = 'true';
+
+        let lastFocused: HTMLElement | null = null;
+
+        const openModal = () => {
+            lastFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+            overlay.hidden = false;
+            overlay.setAttribute('aria-hidden', 'false');
+            overlay.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+            closeBtn.focus();
+        };
+
+        const closeModal = () => {
+            overlay.classList.remove('is-open');
+            overlay.hidden = true;
+            overlay.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+            lastFocused?.focus();
+            lastFocused = null;
+        };
+
+        openBtn.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+        backdrop.addEventListener('click', closeModal);
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !overlay.hidden) {
+                closeModal();
+            }
+        });
+    }
+
+    initComingSoonModal();
+    document.addEventListener('astro:page-load', initComingSoonModal);
+</script>

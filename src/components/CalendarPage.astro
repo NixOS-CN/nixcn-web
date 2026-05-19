@@ -10,6 +10,8 @@ interface Props {
 const { locale } = Astro.props;
 const t = getTranslations(locale);
 const tp = t.calendar;
+const foodMapSrc =
+    locale === 'en' ? '/images/calendar/food-map-en.png' : '/images/calendar/food-map.png';
 ---
 
 <BaseLayout title={tp.meta.title} description={tp.meta.description} lang={tp.meta.htmlLang}>
@@ -88,7 +90,7 @@ const tp = t.calendar;
 
                         <figure class='food-map'>
                             <img
-                                src='/images/calendar/food-map.png'
+                                src={foodMapSrc}
                                 alt={tp.food.mapAlt}
                                 class='food-map-img'
                                 loading='lazy'

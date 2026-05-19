@@ -155,7 +155,13 @@
                 "title": "NixCN Conference 2605 打造你的专属参会证 ✨",
                 "body": "提供纪念品的个性化设定服务。点击下方按钮跳转至外部定制通道，录入你的专属身份参数以生成定制化参会证。",
                 "cta": "开启专属定制",
-                "ctaUrl": "https://forms.cloud.microsoft/r/bJMeW1iu4C"
+                "ctaUrl": "https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZ__u0jrMtUODNTWUpJSEs0STZZWThNTTJVUlNHN01OQy4u&Token=f0e798fadec04532bf2ef8b474a4d7b2"
+            },
+            "comingSoon": {
+                "title": "定制通道暂未开放",
+                "body": "纪念品个性化定制功能正在准备中，敬请期待。通道开放后，点击下方按钮即可跳转至外部表单完成定制。",
+                "close": "知道了",
+                "ariaClose": "关闭弹窗"
             }
         }
     },
@@ -315,7 +321,13 @@
                 "title": "NixCN Conference 2605 — Create Your Exclusive Badge ✨",
                 "body": "We offer personalized souvenir settings. Click the button below to open the external customization channel and enter your identity details to generate a customized conference badge.",
                 "cta": "Start Customization",
-                "ctaUrl": "https://forms.cloud.microsoft/r/bJMeW1iu4C"
+                "ctaUrl": "https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZ__u0jrMtUODNTWUpJSEs0STZZWThNTTJVUlNHN01OQy4u&Token=f0e798fadec04532bf2ef8b474a4d7b2"
+            },
+            "comingSoon": {
+                "title": "Customization Not Open Yet",
+                "body": "Personalized souvenir customization is still being prepared. Please check back later — once live, the button below will take you to the external form.",
+                "close": "Got it",
+                "ariaClose": "Close dialog"
             }
         }
     }
