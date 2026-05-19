@@ -7,14 +7,16 @@
         "start": "astro dev",
         "build": "astro build",
         "preview": "astro preview",
-        "astro": "astro"
+        "astro": "astro",
+        "check": "astro check",
+        "typecheck": "astro check",
+        "lint:fix": "prettier --write ."
     },
     "dependencies": {
-        "@astrojs/mdx": "^4.3.12",
-        "@astrojs/starlight": "^0.37.0",
+        "@astrojs/check": "^0.9.9",
         "astro": "^5.6.1",
         "sharp": "^0.34.2",
-        "starlight-ui-tweaks": "^0.1.0"
+        "typescript": "^6.0.3"
     },
     "devDependencies": {
         "prettier": "^3.7.4",

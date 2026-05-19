@@ -1,0 +1,322 @@
+{
+    "zh-CN": {
+        "nav": {
+            "home": "HOME",
+            "calendar": "活动指南",
+            "cmsGuide": "CMS 系统指引",
+            "souvenir": "纪念品信息",
+            "ariaLogoHome": "NixCN 首页",
+            "ariaMain": "主导航",
+            "ariaMobile": "移动导航",
+            "ariaMenu": "打开导航菜单",
+            "ariaTelegram": "Telegram 群组",
+            "ariaMatrix": "Matrix 频道",
+            "ariaLangSwitch": "切换语言 / Switch Language"
+        },
+        "home": {
+            "meta": {
+                "htmlLang": "zh-CN",
+                "title": "NixCN Conference 2605",
+                "description": "NixCN Conference 2605 — 一次面向中文社区的 Nix / NixOS 线下聚会，让真实的实践、问题与探索，在现场被看见。"
+            },
+            "hero": {
+                "conferenceTitle": "NixCN Conference",
+                "year": "2605",
+                "headlineBefore": "让你的\u00a0",
+                "headlineBadge": "Nix",
+                "headlineAfter": "\u00a0实践被看见",
+                "lead": "欢迎回来相聚。这是又一次面向中文社区的 Nix / NixOS 线下聚会——更丰富，也更好玩。我们希望把正在使用 Nix、研究 Nix，或刚刚开始了解 Nix 的人聚在一起。让真实的实践、问题与探索，在现场被看见。",
+                "ctaPrimary": "报名参会\u00a0→",
+                "ctaSecondary": "CMS 系统指引\u00a0👈"
+            }
+        },
+        "calendar": {
+            "meta": {
+                "htmlLang": "zh-CN",
+                "title": "活动指南 · NixCN Conference 2605",
+                "description": "NixCN Conference 2605 活动指南 — 议程安排、会议时间、周边美食地图，让你的参会体验更具体。"
+            },
+            "heading": {
+                "title": "活动指南",
+                "sub": "如果你对 Nix 有一点好奇，这里可能会给你一个更具体的答案。"
+            },
+            "agenda": {
+                "leadEmoji": "🌟",
+                "leadHtml": "本次活动以&nbsp;<span class='accent'>议题分享（Talk Session）</span>&nbsp;为主。",
+                "bullets": [
+                    "每个议题分享约 <strong>30</strong> 分钟",
+                    "每场议题结束后设有约 <strong>10</strong> 分钟交流 / 提问环节",
+                    "下午约 <strong>15:00</strong> 设置茶歇时间"
+                ]
+            },
+            "schedule": {
+                "emoji": "📅",
+                "title": "会议安排",
+                "timeLabel": "会议时间：",
+                "timeValue": "2026/06/13 (Sat.) ~ 2026/06/14 (Sun.)",
+                "flowLabel": "当天流程：",
+                "flow": [
+                    "签到时间：08:30 – 09:30",
+                    "议题分享：09:30 开始",
+                    "午休时间：12:00 – 14:00",
+                    "下午议题：14:00 – 18:00",
+                    "活动结束：18:30 前"
+                ]
+            },
+            "food": {
+                "emoji": "🍜",
+                "title": "美食指引",
+                "mapAlt": "NixCN Conference 2605 会场周边美食地图，标注了 2-13 分钟步行距离内的推荐餐厅"
+            }
+        },
+        "cmsGuide": {
+            "meta": {
+                "htmlLang": "zh-CN",
+                "title": "CMS 系统指引 · NixCN Conference 2605",
+                "description": "NixCN Conference 2605 CMS 系统指引 — 邮箱登录、查看活动、身份认证、提交议程、议程审核、入场签到的完整使用流程。"
+            },
+            "hero": {
+                "title": "CMS 系统指引",
+                "subs": [
+                    "通过报名系统，你可以完成活动报名、身份认证、议程提交，以及后续入场签到等操作。",
+                    "首次使用无需提前注册，使用邮箱登录后，系统会自动创建账号。"
+                ]
+            },
+            "tipBell": "🔔",
+            "tipLabel": "提示：",
+            "steps": [
+                {
+                    "id": "step-01",
+                    "num": "01",
+                    "name": "使用邮箱登录",
+                    "bodyHtml": "进入报名系统后，输入任意可正常接收邮件的邮箱，即可获取登录链接。<br />首次登录时，系统会自动为你创建账号。你只需要根据提示设置用户名和昵称，即可进入系统。",
+                    "tip": {
+                        "kind": "inline",
+                        "text": "请尽量使用常用邮箱登录哦。后续活动报名、身份认证、议程提交和会务通知，都将与该邮箱关联。"
+                    }
+                },
+                {
+                    "id": "step-02",
+                    "num": "02",
+                    "name": "查看近期活动",
+                    "bodyHtml": "登录后，你可以在「活动列表」中查看当前开放的会议活动。<br />选择对应活动后，可以进入活动详情页，查看会议时间、地点、活动说明、报名状态与相关操作入口。<br />你可以在这里完成：",
+                    "list": ["加入活动", "查看活动详情", "提交议程", "查看已加入的活动"]
+                },
+                {
+                    "id": "step-03",
+                    "num": "03",
+                    "name": "加入活动并完成身份认证",
+                    "bodyHtmls": [
+                        "点击「加入活动」后，系统会提示你完成身份认证。",
+                        "身份认证用于确认参会者身份，保障现场入场、签到和会务管理的准确性。认证信息仅用于本次活动身份核验，我们会妥善保护你的个人信息安全，你填写的身份信息会在 30 天内销毁。",
+                        "你可以选择以下方式完成认证："
+                    ],
+                    "list": ["身份证认证", "护照认证"],
+                    "afterListHtml": "完成认证后，即可继续参与活动相关操作。",
+                    "tip": {
+                        "kind": "inline",
+                        "text": "需要填写个人有效证件的真实信息哦。"
+                    }
+                },
+                {
+                    "id": "step-04",
+                    "num": "04",
+                    "name": "提交议程",
+                    "bodyHtml": "加入活动后，你可以在活动页面提交议程。<br />提交时需要填写议程名称、简要描述和预计分享时长等信息。请尽量清晰说明你的分享主题、内容方向和希望讨论的问题，方便主办方进行审核与安排。"
+                },
+                {
+                    "id": "step-05",
+                    "num": "05",
+                    "name": "议程审核与排期",
+                    "bodyHtmls": [
+                        "提交后的议程将由主办方统一审核。<br />我们会根据主题相关性、内容完整度、分享价值和会议整体安排进行筛选。通过审核的议程将进入排期流程。",
+                        "最终议程预计将在会议开始前两周进行公示。<br />请以后续官网或活动页面发布的信息为准。"
+                    ]
+                },
+                {
+                    "id": "step-06",
+                    "num": "06",
+                    "name": "入场码和签到码",
+                    "bodyHtml": "活动开始后，系统将为已加入活动的参会者生成入场码和签到码。<br />入场码和签到码是你现场参会的重要凭证。到达会场后，请根据工作人员指引，在对应环节出示使用。"
+                }
+            ]
+        },
+        "souvenir": {
+            "meta": {
+                "htmlLang": "zh-CN",
+                "title": "纪念品信息 · NixCN Conference 2605",
+                "description": "NixCN Conference 2605 纪念品信息 — DIY 个性化参会证，提前解锁活动限定纪念品定制服务。"
+            },
+            "hero": {
+                "title": "纪念品信息",
+                "sub": "打造你的专属参会名片！你可以在此 DIY 个性化参会证，并提前解锁更多活动限定纪念品信息。"
+            },
+            "card": {
+                "title": "NixCN Conference 2605 打造你的专属参会证 ✨",
+                "body": "提供纪念品的个性化设定服务。点击下方按钮跳转至外部定制通道，录入你的专属身份参数以生成定制化参会证。",
+                "cta": "开启专属定制",
+                "ctaUrl": "https://forms.cloud.microsoft/r/bJMeW1iu4C"
+            }
+        }
+    },
+    "en": {
+        "nav": {
+            "home": "HOME",
+            "calendar": "Event Guide",
+            "cmsGuide": "CMS Guide",
+            "souvenir": "Souvenirs",
+            "ariaLogoHome": "NixCN Home",
+            "ariaMain": "Primary navigation",
+            "ariaMobile": "Mobile navigation",
+            "ariaMenu": "Open navigation menu",
+            "ariaTelegram": "Telegram group",
+            "ariaMatrix": "Matrix channel",
+            "ariaLangSwitch": "Switch Language / 切换语言"
+        },
+        "home": {
+            "meta": {
+                "htmlLang": "en",
+                "title": "NixCN Conference 2605",
+                "description": "NixCN Conference 2605 — an in-person Nix / NixOS gathering for the Chinese community, where real-world practice, questions and exploration get to be seen onstage."
+            },
+            "hero": {
+                "conferenceTitle": "NixCN Conference",
+                "year": "2605",
+                "headlineBefore": "Let your\u00a0",
+                "headlineBadge": "Nix",
+                "headlineAfter": "practice <br class=\"headline-break\" />be seen",
+                "lead": "Welcome back to the table. This is another in-person Nix / NixOS meetup for the Chinese community — richer, and more fun. We want to bring together people who are already using Nix, studying Nix, or just starting to learn about Nix. Let real practice, questions and exploration be seen onstage.",
+                "ctaPrimary": "Sign up\u00a0→",
+                "ctaSecondary": "CMS Guide\u00a0👈"
+            }
+        },
+        "calendar": {
+            "meta": {
+                "htmlLang": "en",
+                "title": "Event Guide · NixCN Conference 2605",
+                "description": "NixCN Conference 2605 Event Guide — agenda, schedule, and a nearby food map to make your conference experience more concrete."
+            },
+            "heading": {
+                "title": "Event Guide",
+                "sub": "If you are a little curious about Nix, this page may give you a more concrete answer."
+            },
+            "agenda": {
+                "leadEmoji": "🌟",
+                "leadHtml": "This event centers on&nbsp;<span class='accent'>Talk Sessions</span>.",
+                "bullets": [
+                    "Each talk runs for about <strong>30</strong> minutes",
+                    "Every talk is followed by about <strong>10</strong> minutes of discussion / Q&amp;A",
+                    "A tea break is scheduled around <strong>15:00</strong> in the afternoon"
+                ]
+            },
+            "schedule": {
+                "emoji": "📅",
+                "title": "Conference schedule",
+                "timeLabel": "Conference dates:",
+                "timeValue": "2026/06/13 (Sat.) ~ 2026/06/14 (Sun.)",
+                "flowLabel": "Daily flow:",
+                "flow": [
+                    "Check-in: 08:30 – 09:30",
+                    "Talks start: 09:30",
+                    "Lunch break: 12:00 – 14:00",
+                    "Afternoon talks: 14:00 – 18:00",
+                    "Wrap up before: 18:30"
+                ]
+            },
+            "food": {
+                "emoji": "🍜",
+                "title": "Food guide",
+                "mapAlt": "NixCN Conference 2605 nearby food map, with recommended restaurants within a 2–13 minute walk from the venue"
+            }
+        },
+        "cmsGuide": {
+            "meta": {
+                "htmlLang": "en",
+                "title": "CMS Guide · NixCN Conference 2605",
+                "description": "NixCN Conference 2605 CMS Guide — the full flow for email login, browsing events, identity verification, talk submission, talk review and on-site check-in."
+            },
+            "hero": {
+                "title": "CMS Guide",
+                "subs": [
+                    "Through the registration system you can sign up for events, complete identity verification, submit talks, and check in on-site.",
+                    "First-time users do not need to register in advance. Log in with your email and the system will create your account automatically."
+                ]
+            },
+            "tipBell": "🔔",
+            "tipLabel": "Tip:",
+            "steps": [
+                {
+                    "id": "step-01",
+                    "num": "01",
+                    "name": "Log in with your email",
+                    "bodyHtml": "Once you open the registration system, enter any email address that can receive mail and you will get a login link.<br />On first login the system creates an account for you automatically. Just follow the prompts to set a username and display name, and you are in.",
+                    "tip": {
+                        "kind": "inline",
+                        "text": "Please use an email address you check often. Future event sign-ups, identity verification, talk submissions and event notifications will all be tied to this address."
+                    }
+                },
+                {
+                    "id": "step-02",
+                    "num": "02",
+                    "name": "Browse upcoming events",
+                    "bodyHtml": "Once logged in, you can browse currently open events on the Events page.<br />Select an event to open its detail page, where you can see the date, venue, description, registration status and the action entries you need.<br />Here you can:",
+                    "list": ["Join the event", "View event details", "Submit a talk", "View events you have joined"]
+                },
+                {
+                    "id": "step-03",
+                    "num": "03",
+                    "name": "Join an event and complete identity verification",
+                    "bodyHtmls": [
+                        "Once you click Join, the system will prompt you to complete identity verification.",
+                        "Identity verification is used to confirm attendee identity and to ensure accurate on-site entry, check-in and event management. The information is used only for verifying your identity for this event. We take care to protect your personal information, and the identity data you submit will be destroyed within 30 days.",
+                        "You can verify your identity using either of the following:"
+                    ],
+                    "list": ["National ID card verification", "Passport verification"],
+                    "afterListHtml": "Once verified, you can continue with the rest of the event actions.",
+                    "tip": {
+                        "kind": "inline",
+                        "text": "Please fill in real information from a valid personal ID document."
+                    }
+                },
+                {
+                    "id": "step-04",
+                    "num": "04",
+                    "name": "Submit a talk",
+                    "bodyHtml": "Once you have joined an event, you can submit a talk from the event page.<br />When submitting, fill in the talk title, a short description, and the expected length. Please describe your topic, the direction of the content, and the questions you want to discuss as clearly as you can — it helps the organizers review and schedule the program."
+                },
+                {
+                    "id": "step-05",
+                    "num": "05",
+                    "name": "Talk review and scheduling",
+                    "bodyHtmls": [
+                        "Submitted talks are reviewed by the organizers as a whole.<br />We curate the program based on topic relevance, content completeness, sharing value and the overall conference plan. Accepted talks then move into the scheduling phase.",
+                        "The final program is expected to be announced two weeks before the conference.<br />Please refer to the latest information on the website or event page closer to the date."
+                    ]
+                },
+                {
+                    "id": "step-06",
+                    "num": "06",
+                    "name": "Entry code and check-in code",
+                    "bodyHtml": "Once the event starts, the system will generate an entry code and a check-in code for every attendee who has joined.<br />These codes are your essential credentials on-site. Once you arrive at the venue, please present them at the matching step under staff guidance."
+                }
+            ]
+        },
+        "souvenir": {
+            "meta": {
+                "htmlLang": "en",
+                "title": "Souvenirs · NixCN Conference 2605",
+                "description": "NixCN Conference 2605 Souvenirs — DIY your personalized conference badge and unlock event-limited souvenir customization."
+            },
+            "hero": {
+                "title": "Souvenirs",
+                "sub": "Create your exclusive conference name card! DIY your personalized badge here and unlock more event-limited souvenir information in advance."
+            },
+            "card": {
+                "title": "NixCN Conference 2605 — Create Your Exclusive Badge ✨",
+                "body": "We offer personalized souvenir settings. Click the button below to open the external customization channel and enter your identity details to generate a customized conference badge.",
+                "cta": "Start Customization",
+                "ctaUrl": "https://forms.cloud.microsoft/r/bJMeW1iu4C"
+            }
+        }
+    }
+}

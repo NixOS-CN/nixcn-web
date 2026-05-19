@@ -1,0 +1,420 @@
+---
+import Navbar from './Navbar.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { type Locale, getTranslations } from '../i18n/config';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale);
+const tp = t.souvenir;
+---
+
+<BaseLayout title={tp.meta.title} description={tp.meta.description} lang={tp.meta.htmlLang}>
+    <Navbar locale={locale} activePage='souvenir' />
+
+    <!-- ======= Hero Banner ======= -->
+    <section class='hero-banner' aria-labelledby='souvenir-title'>
+        <div class='hero-bg' aria-hidden='true'>
+            <img class='hero-bg-img' src='/images/souvenir/hero-bg.png' alt='' />
+        </div>
+        <div class='hero-content'>
+            <h1 class='hero-title' id='souvenir-title'>{tp.hero.title}</h1>
+            <p class='hero-sub'>{tp.hero.sub}</p>
+        </div>
+    </section>
+
+    <!-- ======= Feature Card ======= -->
+    <main class='souvenir-main'>
+        <section class='feature-card' aria-labelledby='feature-title'>
+            <div class='card-bg-texture' aria-hidden='true'>
+                <img class='card-texture-img' src='/images/souvenir/card-texture.png' alt='' />
+            </div>
+            <div class='card-snowflake' aria-hidden='true'>
+                <img src='/images/souvenir/card-snowflake.png' alt='' width='327' height='325' />
+            </div>
+            <div class='card-content'>
+                <h2 class='card-title' id='feature-title'>{tp.card.title}</h2>
+                <p class='card-body'>{tp.card.body}</p>
+                <a class='cta-btn' href={tp.card.ctaUrl} target='_blank' rel='noopener noreferrer'>
+                    {tp.card.cta}
+                    <img class='cta-arrow' src='/images/souvenir/cta-arrow.png' alt='' width='35' height='35' />
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======= 底部同心圆装饰（Figma 切图） ======= -->
+    <div class='bottom-circles' aria-hidden='true'>
+        <img src='/images/souvenir/bottom-circles.png' alt='' />
+    </div>
+</BaseLayout>
+
+<style>
+    :global(.page) {
+        position: relative;
+        overflow: hidden;
+    }
+
+    @keyframes heroFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes heroFadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes heroFadeDown {
+        from {
+            opacity: 0;
+            transform: translateY(-12px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    :global(.navbar) {
+        animation: heroFadeDown 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    /* ===== Hero Banner ===== */
+    .hero-banner {
+        --hero-ease: cubic-bezier(0.22, 1, 0.36, 1);
+        position: relative;
+        padding: 38px 24px 48px;
+        text-align: center;
+        isolation: isolate;
+        overflow: hidden;
+        min-height: 215px;
+    }
+
+    .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    .hero-bg-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+        animation: heroFadeIn 0.6s var(--hero-ease) both;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 720px;
+        margin: 0 auto;
+    }
+
+    .hero-title {
+        font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+        font-weight: 600;
+        color: #030f20;
+        margin: 0 0 16px;
+        letter-spacing: -0.05em;
+        line-height: 1.1;
+        text-shadow: 0 4px 14px rgba(3, 15, 32, 0.08);
+        animation: heroFadeUp 0.55s var(--hero-ease) both;
+        animation-delay: 0.1s;
+    }
+
+    .hero-sub {
+        font-size: clamp(0.875rem, 1vw, 1rem);
+        color: #1a2332;
+        margin: 0;
+        line-height: 1.7;
+        letter-spacing: -0.02em;
+        max-width: 640px;
+        margin-inline: auto;
+        animation: heroFadeUp 0.5s var(--hero-ease) both;
+        animation-delay: 0.18s;
+    }
+
+    /* ===== Feature Card ===== */
+    .souvenir-main {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1152px;
+        margin: 0 auto;
+        padding: 16px 40px 120px;
+    }
+
+    .feature-card {
+        position: relative;
+        min-height: 400px;
+        border-radius: 24px;
+        border: 2px solid rgba(155, 206, 241, 0.8);
+        background: #f9fbff;
+        overflow: hidden;
+        display: flex;
+        align-items: stretch;
+        animation: heroFadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+        animation-delay: 0.22s;
+    }
+
+    .card-bg-texture {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    .card-texture-img {
+        position: absolute;
+        /* Figma 198:294 — 底纹在卡片内偏移 */
+        left: -15%;
+        top: -35%;
+        width: 130%;
+        height: auto;
+        min-height: 100%;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+
+    .card-snowflake {
+        position: absolute;
+        /* Figma 202:325 — x=737 y=155 within 1120×400 card */
+        right: 56px;
+        top: 155px;
+        z-index: 1;
+        pointer-events: none;
+        animation: heroFadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+        animation-delay: 0.36s;
+    }
+
+    .card-snowflake img {
+        display: block;
+        width: 327px;
+        height: auto;
+    }
+
+    .card-content {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 24px;
+        padding: 60px 48px;
+        max-width: 720px;
+    }
+
+    .card-title {
+        font-size: clamp(1.5rem, 2.2vw, 2rem);
+        font-weight: 600;
+        color: #030f20;
+        margin: 0;
+        letter-spacing: -0.04em;
+        line-height: 1.25;
+        animation: heroFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+        animation-delay: 0.32s;
+    }
+
+    .card-body {
+        font-size: 15px;
+        line-height: 1.8;
+        color: #1a2332;
+        margin: 0;
+        letter-spacing: -0.01em;
+        max-width: 560px;
+        animation: heroFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+        animation-delay: 0.4s;
+    }
+
+    .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        align-self: flex-start;
+        padding: 18px 32px;
+        border-radius: 36px;
+        background: #5277c3;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 500;
+        letter-spacing: -0.05em;
+        text-decoration: none;
+        transition:
+            background 0.2s,
+            transform 0.15s,
+            box-shadow 0.2s;
+        white-space: nowrap;
+        animation: heroFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+        animation-delay: 0.48s;
+    }
+
+    .cta-btn:hover {
+        background: #4269b8;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(82, 119, 195, 0.35);
+    }
+
+    .cta-arrow {
+        display: block;
+        width: 35px;
+        height: 35px;
+        flex-shrink: 0;
+    }
+
+    /* ===== 底部同心圆装饰 ===== */
+    .bottom-circles {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: min(710px, 100%);
+        pointer-events: none;
+        z-index: 0;
+        animation: heroFadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+        animation-delay: 0.4s;
+    }
+
+    .bottom-circles img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 1023px) {
+        .hero-banner {
+            padding: 32px 20px 40px;
+        }
+
+        .souvenir-main {
+            padding: 12px 28px 100px;
+        }
+
+        .feature-card {
+            min-height: 360px;
+        }
+
+        .card-content {
+            padding: 48px 36px;
+        }
+
+        .card-snowflake {
+            right: 24px;
+            top: auto;
+            bottom: 16px;
+        }
+
+        .card-snowflake img {
+            width: min(260px, 32vw);
+        }
+
+        .bottom-circles {
+            width: min(560px, 100%);
+        }
+    }
+
+    @media (max-width: 639px) {
+        .hero-banner {
+            padding: 24px 16px 32px;
+        }
+
+        .hero-title {
+            margin-bottom: 12px;
+        }
+
+        .hero-sub {
+            font-size: 13px;
+            line-height: 1.65;
+        }
+
+        .souvenir-main {
+            padding: 8px 18px 80px;
+        }
+
+        .feature-card {
+            min-height: auto;
+        }
+
+        .card-content {
+            padding: 32px 24px 40px;
+            gap: 20px;
+        }
+
+        .card-title {
+            font-size: 22px;
+        }
+
+        .card-body {
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        .card-snowflake {
+            right: -12px;
+            bottom: -8px;
+            top: auto;
+        }
+
+        .card-snowflake img {
+            width: 180px;
+        }
+
+        .cta-btn {
+            width: 100%;
+            justify-content: center;
+            padding: 16px 24px;
+        }
+
+        .cta-arrow {
+            width: 28px;
+            height: 28px;
+        }
+
+        .bottom-circles {
+            width: min(380px, 100%);
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        :global(.navbar),
+        .hero-bg-img,
+        .hero-title,
+        .hero-sub,
+        .feature-card,
+        .card-snowflake,
+        .card-title,
+        .card-body,
+        .cta-btn {
+            animation: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        .bottom-circles {
+            animation: none !important;
+            opacity: 1 !important;
+            transform: translateX(-50%) !important;
+        }
+    }
+</style>
