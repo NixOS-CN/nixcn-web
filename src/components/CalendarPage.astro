@@ -1,0 +1,580 @@
+---
+import Navbar from './Navbar.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { type Locale, getTranslations } from '../i18n/config';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale);
+const tp = t.calendar;
+const foodMapSrc =
+    locale === 'en' ? '/images/calendar/food-map-en.png' : '/images/calendar/food-map.png';
+---
+
+<BaseLayout title={tp.meta.title} description={tp.meta.description} lang={tp.meta.htmlLang}>
+    <Navbar locale={locale} activePage='calendar' />
+
+    <!-- ======= Page Heading ======= -->
+    <section class='page-heading'>
+        <h1 class='heading-title'>{tp.heading.title}</h1>
+        <p class='heading-sub'>{tp.heading.sub}</p>
+    </section>
+
+    <!-- ======= Guide Card ======= -->
+    <section class='guide-card'>
+        <div class='guide-inner'>
+            <!-- 装饰竖线（分隔左右两栏，绝对定位贯穿全高） -->
+            <span class='deco-line deco-v' aria-hidden='true'></span>
+
+            <div class='guide-grid'>
+                <!-- ============ 左栏 ============ -->
+                <div class='col col-left'>
+                    <!-- 活动议程要点 -->
+                    <div class='block agenda-points'>
+                        <p class='point-lead'>
+                            <span class='emoji'>{tp.agenda.leadEmoji}</span>
+                            <span class='point-text'><Fragment set:html={tp.agenda.leadHtml} /></span>
+                        </p>
+                        <ul class='bullet-list'>
+                            {
+                                tp.agenda.bullets.map((html) => (
+                                    <li>
+                                        <Fragment set:html={html} />
+                                    </li>
+                                ))
+                            }
+                        </ul>
+                    </div>
+
+                    <!-- 装饰横线（in-flow 居于两块之间，gap 自动给上下等距）-->
+                    <span class='deco-line deco-h' aria-hidden='true'></span>
+
+                    <!-- 会议安排 -->
+                    <div class='block schedule-block'>
+                        <p class='section-title'>
+                            <span class='emoji'>{tp.schedule.emoji}</span>
+                            <span>{tp.schedule.title}</span>
+                        </p>
+
+                        <div class='info-card'>
+                            <div class='info-row'>
+                                <span class='info-label'>{tp.schedule.timeLabel}</span>
+                                <span class='info-value'>{tp.schedule.timeValue}</span>
+                            </div>
+                            <div class='info-row info-row-stack'>
+                                <span class='info-label'>{tp.schedule.flowLabel}</span>
+                                <ul class='timeline-list'>
+                                    {
+                                        tp.schedule.flow.map((item) => (
+                                            <li>
+                                                <Fragment set:html={item} />
+                                            </li>
+                                        ))
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ============ 右栏 ============ -->
+                <div class='col col-right'>
+                    <div class='block food-block' id='food-block'>
+                        <p class='section-title'>
+                            <span class='emoji'>{tp.food.emoji}</span>
+                            <span>{tp.food.title}</span>
+                        </p>
+
+                        <figure class='food-map'>
+                            <img
+                                src={foodMapSrc}
+                                alt={tp.food.mapAlt}
+                                class='food-map-img'
+                                loading='lazy'
+                                decoding='async'
+                            />
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+
+<style>
+    :global(.page) {
+        padding: 0 16px 16px;
+        --hero-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    @media (max-width: 639px) {
+        :global(.page) {
+            padding: 0 8px 8px;
+        }
+    }
+
+    @keyframes heroFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes heroFadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes heroFadeDown {
+        from {
+            opacity: 0;
+            transform: translateY(-12px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes decoFadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 0.65;
+        }
+    }
+
+    :global(.navbar) {
+        animation: heroFadeDown 0.45s var(--hero-ease) both;
+    }
+
+    /* ===== 页面标题区 ===== */
+    .page-heading {
+        padding: 48px 16px 24px;
+        text-align: center;
+        flex-shrink: 0;
+    }
+
+    .heading-title {
+        font-size: clamp(2.25rem, 5vw, 4rem);
+        font-weight: 600;
+        letter-spacing: -0.05em;
+        color: #030f20;
+        margin: 0 0 16px;
+        line-height: 1.1;
+        text-shadow: 0 4px 12px rgba(3, 15, 32, 0.06);
+        animation: heroFadeUp 0.55s var(--hero-ease) both;
+        animation-delay: 0.1s;
+    }
+
+    .heading-sub {
+        font-size: 16px;
+        color: #030f20;
+        letter-spacing: -0.05em;
+        margin: 0;
+        line-height: 1.4;
+        animation: heroFadeUp 0.5s var(--hero-ease) both;
+        animation-delay: 0.18s;
+    }
+
+    /* ===== 主卡片：双层圆角描边 ===== */
+    .guide-card {
+        position: relative;
+        margin: 16px 0 0;
+        border-radius: 24px;
+        border: 2px solid rgba(155, 206, 241, 0.8);
+        background: transparent;
+        padding: 10px;
+        overflow: hidden;
+        animation: heroFadeIn 0.5s var(--hero-ease) both;
+        animation-delay: 0.22s;
+    }
+
+    .guide-inner {
+        position: relative;
+        border-radius: 16px;
+        border: 2px solid rgba(155, 206, 241, 0.8);
+        background: rgba(249, 251, 255, 0.85);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        padding: 40px clamp(20px, 4vw, 56px);
+        min-height: 600px;
+        overflow: hidden;
+    }
+
+    /* === 装饰：用 nix-tile-100.svg 堆出来的横/竖分隔线 === */
+    .deco-line {
+        pointer-events: none;
+        opacity: 0.65;
+        background-image: url('/images/shared/nix-tile-100.svg');
+        background-position: center;
+        animation: decoFadeIn 0.6s var(--hero-ease) both;
+        animation-delay: 0.36s;
+    }
+
+    /* 横线：作为 .col-left 的 flex 成员位于两块之间，
+               依赖 .col { gap } 自动获得上下等距的呼吸距离 */
+    .deco-h {
+        position: relative;
+        display: block;
+        height: 24px;
+        background-size: 24px 24px;
+        background-repeat: repeat-x;
+        /* 左端：负 margin 反向延伸，让横线贴到卡片内描边（恢复原始 left:3px 的视觉位置） */
+        margin-left: calc(3px - clamp(20px, 4vw, 56px));
+        /* 右端：延伸到竖线 .deco-v 的左缘以补齐栏间 grid gap */
+        margin-right: calc(12px - clamp(24px, 4vw, 56px) / 2);
+    }
+
+    /* 竖线：仍保持绝对定位，贯穿整张卡片的高度 */
+    .deco-v {
+        position: absolute;
+        left: calc(50% - 12px);
+        top: 0;
+        width: 24px;
+        height: 100%;
+        background-size: 24px 24px;
+        background-repeat: repeat-y;
+    }
+
+    /* ===== 两栏网格 ===== */
+    .guide-grid {
+        position: relative;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: clamp(24px, 4vw, 56px);
+        z-index: 1;
+    }
+
+    .col {
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        min-width: 0;
+    }
+
+    .block {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    /* 左栏「活动议程要点」整体限宽到 480，与下方 .info-card / 右栏 .food-block 三者同宽。
+               这样 .bullet-list li 底部的浅蓝 underline 右缘也会停在 info-card 的右缘上，
+               不再伸进中间分割线那条「走廊」里 */
+    .agenda-points {
+        max-width: 480px;
+        animation: heroFadeUp 0.55s var(--hero-ease) both;
+        animation-delay: 0.32s;
+    }
+
+    .emoji {
+        font-size: 20px;
+        line-height: 1;
+        display: inline-block;
+        margin-right: 12px;
+        vertical-align: middle;
+    }
+
+    .point-lead,
+    .section-title {
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: -0.05em;
+        color: #030f20;
+        margin: 0;
+        line-height: 1.4;
+        display: flex;
+        align-items: center;
+    }
+
+    .point-lead .emoji {
+        margin-right: 8px;
+    }
+
+    :global(.accent) {
+        color: #5277c3;
+        font-weight: 500;
+    }
+
+    .bullet-list {
+        list-style: none;
+        margin: 0;
+        padding: 0 0 0 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .bullet-list li {
+        position: relative;
+        /* 左侧 22 用于让位 ::before 的圆点；右侧同样补 22 以保持文案 + 下划线视觉居中，
+                   尤其是在移动端 li 宽度较大时，左右不对称会让整段看上去偏右 */
+        padding: 0 22px 4px 22px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #33466d;
+        letter-spacing: -0.05em;
+        font-weight: 500;
+        background: linear-gradient(rgba(126, 186, 228, 0.31), rgba(126, 186, 228, 0.31)) no-repeat;
+        background-position: 22px 100%;
+        background-size: calc(100% - 44px) 8px;
+    }
+
+    .bullet-list li::before {
+        content: '';
+        position: absolute;
+        left: 4px;
+        top: 0.7em;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #33466d;
+    }
+
+    .bullet-list li :global(strong) {
+        font-size: 24px;
+        font-weight: 600;
+        color: #33466d;
+        margin: 0 2px;
+    }
+
+    .info-card {
+        background: #fff;
+        border: 1px solid #5277c3;
+        border-radius: 24px;
+        padding: 24px 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+        box-shadow: 0 6px 22px rgba(82, 119, 195, 0.08);
+        max-width: 480px;
+    }
+
+    .schedule-block {
+        animation: heroFadeUp 0.55s var(--hero-ease) both;
+        animation-delay: 0.4s;
+    }
+
+    .info-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .info-row-stack {
+        align-items: flex-start;
+    }
+
+    .info-label {
+        font-size: 16px;
+        color: #030f20;
+        letter-spacing: -0.05em;
+        line-height: 1.6;
+        flex-shrink: 0;
+        padding-top: 4px;
+    }
+
+    .info-value {
+        font-size: 20px;
+        font-weight: 500;
+        color: #030f20;
+        letter-spacing: -0.05em;
+        line-height: 1.4;
+    }
+
+    .timeline-list {
+        margin: 0;
+        padding-left: 22px;
+        list-style: disc;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .timeline-list li {
+        font-size: 20px;
+        font-weight: 500;
+        color: #030f20;
+        letter-spacing: -0.05em;
+        line-height: 1.4;
+    }
+
+    .timeline-list li::marker {
+        color: #030f20;
+        font-size: 1em;
+    }
+
+    /* 锚点跳转时给目标区块一点呼吸距离 */
+    #food-block {
+        scroll-margin-top: 24px;
+    }
+
+    .food-block {
+        gap: 20px;
+        /* 与左栏 .info-card 镜像：max-width 480 + 整体靠 col-right 右缘对齐，
+                   这样「分割线 → food-map 左缘」的距离 = 「info-card 右缘 → 分割线」的距离 */
+        align-self: flex-end;
+        width: 100%;
+        max-width: 480px;
+        animation: heroFadeUp 0.55s var(--hero-ease) both;
+        animation-delay: 0.48s;
+    }
+
+    .food-map {
+        margin: 0;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid #5277c3;
+        background: #f6fafc;
+        box-shadow: 0 8px 28px rgba(82, 119, 195, 0.1);
+    }
+
+    .food-map-img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    @media (max-width: 1023px) {
+        .page-heading {
+            padding: 32px 16px 20px;
+        }
+
+        .guide-inner {
+            padding: 32px 32px;
+            min-height: 0;
+        }
+
+        .guide-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .deco-h,
+        .deco-v {
+            display: none;
+        }
+
+        .info-card {
+            max-width: none;
+        }
+
+        .agenda-points {
+            max-width: none;
+        }
+
+        .food-block {
+            align-self: auto;
+            max-width: none;
+            width: auto;
+        }
+    }
+
+    @media (max-width: 639px) {
+        .page {
+            padding: 0 8px 8px;
+        }
+
+        .page-heading {
+            padding: 24px 8px 16px;
+        }
+
+        .heading-title {
+            margin-bottom: 12px;
+        }
+
+        .heading-sub {
+            font-size: 14px;
+            padding: 0 8px;
+        }
+
+        .guide-card {
+            border-radius: 16px;
+            padding: 6px;
+        }
+
+        .guide-inner {
+            border-radius: 10px;
+            padding: 24px 18px;
+        }
+
+        .col {
+            gap: 28px;
+        }
+
+        .point-lead,
+        .section-title {
+            font-size: 17px;
+        }
+
+        .bullet-list li {
+            font-size: 16px;
+            background-size: calc(100% - 44px) 6px;
+        }
+
+        .bullet-list li :global(strong) {
+            font-size: 19px;
+        }
+
+        .info-card {
+            padding: 20px 18px;
+            gap: 20px;
+            border-radius: 18px;
+        }
+
+        .info-label {
+            font-size: 14px;
+        }
+
+        .info-value {
+            font-size: 16px;
+        }
+
+        .timeline-list li {
+            font-size: 16px;
+        }
+
+        .info-row {
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .food-map {
+            border-radius: 16px;
+        }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+        :global(.navbar),
+        .heading-title,
+        .heading-sub,
+        .guide-card,
+        .deco-line,
+        .agenda-points,
+        .schedule-block,
+        .food-block {
+            animation: none !important;
+            opacity: 1 !important;
+            transform: none !important;
+        }
+
+        .deco-line {
+            opacity: 0.65 !important;
+        }
+    }
+</style>

@@ -1,0 +1,10 @@
+---
+import CmsGuidePage from '../../components/CmsGuidePage.astro';
+import { getLocalePaths, type Locale } from '../../i18n/config';
+
+export const getStaticPaths = getLocalePaths;
+
+const { lang } = Astro.params as { lang: Locale };
+---
+
+<CmsGuidePage locale={lang} />

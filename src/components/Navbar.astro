@@ -1,0 +1,318 @@
+---
+import { type Locale, type PageSlug, getTranslations, getPageUrl, LOCALES } from '../i18n/config';
+
+type Page = PageSlug;
+
+interface Props {
+    locale: Locale;
+    activePage: Page;
+}
+
+const { locale, activePage } = Astro.props;
+const t = getTranslations(locale);
+const otherLocale = LOCALES.find((l) => l !== locale) ?? LOCALES[0];
+
+const url = (l: Locale, p: Page) => getPageUrl(l, p);
+const switchHref = url(otherLocale, activePage);
+---
+
+<header class='navbar'>
+    <a href={url(locale, 'home')} class='navbar-logo' aria-label={t.nav.ariaLogoHome}>
+        <img src='/images/shared/nix-cn.svg' alt='NixCN' width='110' height='31' class='logo-img' />
+    </a>
+
+    <nav class='navbar-links' aria-label={t.nav.ariaMain}>
+        <a
+            href={url(locale, 'home')}
+            class:list={['nav-link', activePage === 'home' && 'active']}
+            aria-current={activePage === 'home' ? 'page' : undefined}
+        >
+            {t.nav.home}
+        </a>
+        <a
+            href={url(locale, 'calendar')}
+            class:list={['nav-link', activePage === 'calendar' && 'active']}
+            aria-current={activePage === 'calendar' ? 'page' : undefined}
+        >
+            {t.nav.calendar}
+        </a>
+        <a
+            href={url(locale, 'cmsGuide')}
+            class:list={['nav-link', activePage === 'cmsGuide' && 'active']}
+            aria-current={activePage === 'cmsGuide' ? 'page' : undefined}
+        >
+            {t.nav.cmsGuide}
+        </a>
+        <a
+            href={url(locale, 'souvenir')}
+            class:list={['nav-link', activePage === 'souvenir' && 'active']}
+            aria-current={activePage === 'souvenir' ? 'page' : undefined}
+        >
+            {t.nav.souvenir}
+        </a>
+    </nav>
+
+    <div class='navbar-social'>
+        <a
+            href='https://t.me/nixos_cn'
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label={t.nav.ariaTelegram}
+            class='social-link'
+        >
+            <svg viewBox='0 0 24 24' fill='currentColor' width='22' height='22' aria-hidden='true'>
+                <path
+                    d='M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z'
+                >
+                </path>
+            </svg>
+        </a>
+        <a
+            href='https://matrix.to/#/#nixos-cn:matrix.org'
+            target='_blank'
+            rel='noopener noreferrer'
+            aria-label={t.nav.ariaMatrix}
+            class='social-link'
+        >
+            <svg viewBox='0 0 24 24' fill='currentColor' width='22' height='22' aria-hidden='true'>
+                <path
+                    d='M.632.55v22.9H2.28V24H0V0h2.28v.55zm7.043 7.26v1.157h.033c.309-.443.683-.784 1.117-1.024.433-.245.936-.365 1.5-.365.54 0 1.033.107 1.481.32.448.214.785.582 1.02 1.108.254-.374.6-.706 1.034-.993.434-.287.95-.43 1.546-.43.453 0 .872.056 1.26.167.388.11.716.286.993.53.276.243.489.564.646.96.157.395.232.863.232 1.408v5.786h-2.35v-4.928c0-.27-.012-.53-.04-.785-.027-.255-.09-.48-.19-.678-.102-.197-.258-.355-.462-.48-.203-.124-.475-.185-.81-.185-.337 0-.607.068-.816.205-.21.136-.373.318-.49.54-.12.222-.197.47-.24.745-.04.274-.062.555-.062.843v4.723h-2.35v-4.835c0-.243-.008-.486-.025-.73-.017-.243-.067-.467-.15-.668-.086-.202-.225-.366-.42-.49-.196-.125-.476-.187-.838-.187-.12 0-.265.024-.433.073-.17.048-.337.135-.5.262-.164.127-.302.304-.412.534-.11.228-.167.523-.167.884v5.157H5.41V7.81zm15.693 15.64V.55H21.72V0H24v24h-2.28v-.55z'
+                >
+                </path>
+            </svg>
+        </a>
+        <span class='social-divider' aria-hidden='true'></span>
+        <a href={switchHref} aria-label={t.nav.ariaLangSwitch} class='social-link'>
+            <svg
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                stroke-width='1.5'
+                width='22'
+                height='22'
+                aria-hidden='true'
+            >
+                <circle cx='12' cy='12' r='9.5'></circle>
+                <path
+                    d='M12 2.5a14.5 14.5 0 0 1 3.5 9.5 14.5 14.5 0 0 1-3.5 9.5M12 2.5a14.5 14.5 0 0 0-3.5 9.5 14.5 14.5 0 0 0 3.5 9.5M2.5 12h19'
+                >
+                </path>
+            </svg>
+        </a>
+    </div>
+
+    <details class='mobile-menu'>
+        <summary class='hamburger' aria-label={t.nav.ariaMenu}>
+            <span></span>
+            <span></span>
+            <span></span>
+        </summary>
+        <nav class='mobile-nav' aria-label={t.nav.ariaMobile}>
+            <a href={url(locale, 'home')} aria-current={activePage === 'home' ? 'page' : undefined}>{t.nav.home}</a>
+            <a href={url(locale, 'calendar')} aria-current={activePage === 'calendar' ? 'page' : undefined}>
+                {t.nav.calendar}
+            </a>
+            <a href={url(locale, 'cmsGuide')} aria-current={activePage === 'cmsGuide' ? 'page' : undefined}>
+                {t.nav.cmsGuide}
+            </a>
+            <a href={url(locale, 'souvenir')} aria-current={activePage === 'souvenir' ? 'page' : undefined}>
+                {t.nav.souvenir}
+            </a>
+            <hr class='mobile-nav-divider' />
+            <a href='https://t.me/nixos_cn' target='_blank' rel='noopener noreferrer'>Telegram</a>
+            <a href='https://matrix.to/#/#nixos-cn:matrix.org' target='_blank' rel='noopener noreferrer'>Matrix</a>
+            <a href={switchHref}>{t.nav.ariaLangSwitch}</a>
+        </nav>
+    </details>
+</header>
+
+<style>
+    .navbar {
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        height: 56px;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 20;
+    }
+
+    .navbar-logo {
+        display: flex;
+        align-items: center;
+        flex-shrink: 0;
+        text-decoration: none;
+    }
+
+    .logo-img {
+        height: 31px;
+        width: auto;
+        display: block;
+    }
+
+    .navbar-links {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .nav-link {
+        font-size: 14px;
+        font-weight: 500;
+        color: #a7b8d0;
+        text-decoration: none;
+        letter-spacing: -0.05em;
+        white-space: nowrap;
+        transition: color 0.2s;
+        position: relative;
+        padding-bottom: 2px;
+    }
+
+    .nav-link:hover {
+        color: #5277c3;
+    }
+
+    .nav-link.active {
+        color: #5277c3;
+    }
+
+    .nav-link.active::after {
+        content: '';
+        position: absolute;
+        bottom: -18px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 71px;
+        height: 22px;
+        background: url('/images/shared/tab-line.svg') center / contain no-repeat;
+        pointer-events: none;
+    }
+
+    .navbar-social {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-left: auto;
+    }
+
+    .social-link {
+        color: #a7b8d0;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .social-link:hover {
+        color: #5277c3;
+    }
+
+    .social-divider {
+        display: block;
+        width: 1px;
+        height: 20px;
+        background: #a7b8d0;
+        opacity: 0.4;
+    }
+
+    .mobile-menu {
+        display: none;
+        margin-left: 8px;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 8px 4px;
+        cursor: pointer;
+        list-style: none;
+    }
+
+    .hamburger::marker,
+    .hamburger::-webkit-details-marker {
+        display: none;
+    }
+
+    .hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: #5277c3;
+        border-radius: 2px;
+        transition: all 0.2s;
+    }
+
+    .mobile-nav {
+        position: fixed;
+        top: 56px;
+        left: 8px;
+        right: 8px;
+        background: rgba(249, 251, 255, 0.97);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(155, 206, 241, 0.5);
+        border-radius: 16px;
+        padding: 16px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        z-index: 100;
+        box-shadow: 0 8px 32px rgba(82, 119, 195, 0.12);
+    }
+
+    .mobile-nav a {
+        font-size: 15px;
+        font-weight: 500;
+        color: #5277c3;
+        text-decoration: none;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(155, 206, 241, 0.3);
+        transition: opacity 0.15s;
+    }
+
+    .mobile-nav a:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-nav a:hover {
+        opacity: 0.7;
+    }
+
+    .mobile-nav a[aria-current='page'] {
+        font-weight: 700;
+    }
+
+    .mobile-nav-divider {
+        border: none;
+        border-top: 1px solid rgba(155, 206, 241, 0.4);
+        margin: 4px 0;
+    }
+
+    @media (max-width: 1023px) {
+        .navbar-links {
+            display: none;
+        }
+
+        .mobile-menu {
+            display: block;
+        }
+
+        .navbar-social {
+            margin-left: auto;
+        }
+    }
+
+    @media (max-width: 639px) {
+        .navbar {
+            padding: 0 16px;
+        }
+
+        .navbar-social {
+            display: none;
+        }
+    }
+</style>
