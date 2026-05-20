@@ -38,7 +38,7 @@
             },
             "heading": {
                 "title": "活动指南",
-                "sub": "如果你对 Nix 有一点好奇，这里可能会给你一个更具体的答案。"
+                "sub": "如果你对 Conference 有一点好奇，这里可能会给你一个更具体的答案。"
             },
             "agenda": {
                 "leadEmoji": "🌟",
@@ -92,7 +92,7 @@
                     "bodyHtml": "进入报名系统后，输入任意可正常接收邮件的邮箱，即可获取登录链接。<br />首次登录时，系统会自动为你创建账号。你只需要根据提示设置用户名和昵称，即可进入系统。",
                     "tip": {
                         "kind": "inline",
-                        "text": "请尽量使用常用邮箱登录哦。后续活动报名、身份认证、议程提交和会务通知，都将与该邮箱关联。"
+                        "text": "请尽量使用常用邮箱登录。后续活动报名、身份认证、议程提交和会务通知，都将与该邮箱关联。"
                     }
                 },
                 {
@@ -115,7 +115,7 @@
                     "afterListHtml": "完成认证后，即可继续参与活动相关操作。",
                     "tip": {
                         "kind": "inline",
-                        "text": "需要填写个人有效证件的真实信息哦。"
+                        "text": "对于未成年参会者，需要额外签署一份监护人知情同意书，请在报名结束前后留意群内通知和参会邮箱获取签署指南。"
                     }
                 },
                 {
@@ -149,17 +149,17 @@
             },
             "hero": {
                 "title": "纪念品信息",
-                "sub": "打造你的专属参会名片！你可以在此 DIY 个性化参会证，并提前解锁更多活动限定纪念品信息。"
+                "sub": "你可以在此 DIY 个性化参会证，并提前解锁更多活动限定纪念品信息。"
             },
             "card": {
-                "title": "NixCN Conference 2605 打造你的专属参会证 ✨",
-                "body": "提供纪念品的个性化设定服务。点击下方按钮跳转至外部定制通道，录入你的专属身份参数以生成定制化参会证。",
-                "cta": "开启专属定制",
+                "title": "打造你的专属参会证 ✨",
+                "body": "提供纪念品的个性化设定服务。点击下方按钮跳转至定制通道，录入你的身份参数以生成定制化参会证。",
+                "cta": "前往个性化定制",
                 "ctaUrl": "https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZ__u0jrMtUODNTWUpJSEs0STZZWThNTTJVUlNHN01OQy4u&Token=f0e798fadec04532bf2ef8b474a4d7b2"
             },
             "comingSoon": {
                 "title": "定制通道暂未开放",
-                "body": "纪念品个性化定制功能正在准备中，敬请期待。通道开放后，点击下方按钮即可跳转至外部表单完成定制。",
+                "body": "纪念品详细设计与个性化定制功能正在准备中，敬请期待",
                 "close": "知道了",
                 "ariaClose": "关闭弹窗"
             }
@@ -204,7 +204,7 @@
             },
             "heading": {
                 "title": "Event Guide",
-                "sub": "If you are a little curious about Nix, this page may give you a more concrete answer."
+                "sub": "If you are a little curious about the Conference, this page may give you a more concrete answer."
             },
             "agenda": {
                 "leadEmoji": "🌟",
@@ -281,7 +281,7 @@
                     "afterListHtml": "Once verified, you can continue with the rest of the event actions.",
                     "tip": {
                         "kind": "inline",
-                        "text": "Please fill in real information from a valid personal ID document."
+                        "text": "For underage attendees, a guardian consent form must also be signed. Please watch for group notifications and check your registration email for the signing guide around the time registration closes."
                     }
                 },
                 {
@@ -315,17 +315,17 @@
             },
             "hero": {
                 "title": "Souvenirs",
-                "sub": "Create your exclusive conference name card! DIY your personalized badge here and unlock more event-limited souvenir information in advance."
+                "sub": "DIY your personalized badge here and unlock more event-limited souvenir information in advance."
             },
             "card": {
-                "title": "NixCN Conference 2605 — Create Your Exclusive Badge ✨",
-                "body": "We offer personalized souvenir settings. Click the button below to open the external customization channel and enter your identity details to generate a customized conference badge.",
-                "cta": "Start Customization",
+                "title": "Create Your Exclusive Badge ✨",
+                "body": "We offer personalized souvenir settings. Click the button below to open the customization channel and enter your details to generate a customized conference badge.",
+                "cta": "Go to Customization",
                 "ctaUrl": "https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZ__u0jrMtUODNTWUpJSEs0STZZWThNTTJVUlNHN01OQy4u&Token=f0e798fadec04532bf2ef8b474a4d7b2"
             },
             "comingSoon": {
                 "title": "Customization Not Open Yet",
-                "body": "Personalized souvenir customization is still being prepared. Please check back later — once live, the button below will take you to the external form.",
+                "body": "Souvenir design and personalized customization is still being prepared. Please check back later.",
                 "close": "Got it",
                 "ariaClose": "Close dialog"
             }
