@@ -14,6 +14,7 @@
     },
     "dependencies": {
         "@astrojs/check": "^0.9.9",
+        "@lucide/astro": "^1.16.0",
         "@tailwindcss/vite": "^4.3.0",
         "astro": "^5.6.1",
         "sharp": "^0.34.2",
