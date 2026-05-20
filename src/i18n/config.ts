@@ -14,7 +14,7 @@ export function getTranslations(locale: Locale) {
 
 export const PAGE_SLUGS = {
     home: '',
-    calendar: 'calendar',
+    eventGuide: 'event-guide',
     cmsGuide: 'cms-guide',
     souvenir: 'souvenir',
 } as const;

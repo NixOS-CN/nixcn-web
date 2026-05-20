@@ -2,7 +2,7 @@
     "zh-CN": {
         "nav": {
             "home": "首页",
-            "calendar": "活动指南",
+            "eventGuide": "活动指南",
             "cmsGuide": "CMS 系统指引",
             "souvenir": "纪念品信息",
             "ariaLogoHome": "NixCN 首页",
@@ -30,7 +30,7 @@
                 "ctaSecondary": "CMS 系统指引"
             }
         },
-        "calendar": {
+        "eventGuide": {
             "meta": {
                 "htmlLang": "zh-CN",
                 "title": "活动指南 · NixCN Conference 2605",
@@ -165,7 +165,7 @@
     "en": {
         "nav": {
             "home": "Home",
-            "calendar": "Event Guide",
+            "eventGuide": "Event Guide",
             "cmsGuide": "CMS Guide",
             "souvenir": "Souvenirs",
             "ariaLogoHome": "NixCN Home",
@@ -193,7 +193,7 @@
                 "ctaSecondary": "CMS Guide\u00a0👈"
             }
         },
-        "calendar": {
+        "eventGuide": {
             "meta": {
                 "htmlLang": "en",
                 "title": "Event Guide · NixCN Conference 2605",

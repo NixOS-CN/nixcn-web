@@ -9,12 +9,12 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = getTranslations(locale);
-const tp = t.calendar;
-const foodMapSrc = locale === 'en' ? '/images/calendar/food-map-en.png' : '/images/calendar/food-map.png';
+const tp = t.eventGuide;
+const foodMapSrc = locale === 'en' ? '/images/event-guide/food-map-en.png' : '/images/event-guide/food-map.png';
 ---
 
 <BaseLayout title={tp.meta.title} description={tp.meta.description} lang={tp.meta.htmlLang}>
-    <Navbar locale={locale} activePage='calendar' />
+    <Navbar locale={locale} activePage='eventGuide' />
 
     <!-- ======= Hero Banner ======= -->
     <section

@@ -33,14 +33,14 @@ const switchHref = url(otherLocale, activePage);
             {t.nav.home}
         </a>
         <a
-            href={url(locale, 'calendar')}
+            href={url(locale, 'eventGuide')}
             class:list={[
                 'nav-link text-sm font-medium text-[#a7b8d0] no-underline tracking-[-0.05em] whitespace-nowrap transition-colors duration-200 relative pb-0.5 hover:text-brand-blue',
-                activePage === 'calendar' && 'active text-brand-blue',
+                activePage === 'eventGuide' && 'active text-brand-blue',
             ]}
-            aria-current={activePage === 'calendar' ? 'page' : undefined}
+            aria-current={activePage === 'eventGuide' ? 'page' : undefined}
         >
-            {t.nav.calendar}
+            {t.nav.eventGuide}
         </a>
         <a
             href={url(locale, 'cmsGuide')}
@@ -138,11 +138,11 @@ const switchHref = url(otherLocale, activePage);
                 {t.nav.home}
             </a>
             <a
-                href={url(locale, 'calendar')}
-                aria-current={activePage === 'calendar' ? 'page' : undefined}
+                href={url(locale, 'eventGuide')}
+                aria-current={activePage === 'eventGuide' ? 'page' : undefined}
                 class='text-[15px] font-medium text-brand-blue no-underline py-2.5 border-b border-[rgba(155,206,241,0.3)] transition-opacity duration-150 hover:opacity-70 last:border-b-0'
             >
-                {t.nav.calendar}
+                {t.nav.eventGuide}
             </a>
             <a
                 href={url(locale, 'cmsGuide')}
