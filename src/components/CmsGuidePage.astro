@@ -10,35 +10,48 @@ interface Props {
 const { locale } = Astro.props;
 const t = getTranslations(locale);
 const tp = t.cmsGuide;
+
+const subDelays = ['0.4s', '0.48s', '0.56s'];
 ---
 
 <BaseLayout title={tp.meta.title} description={tp.meta.description} lang={tp.meta.htmlLang}>
     <Navbar locale={locale} activePage='cmsGuide' />
 
-    <!-- ======= Hero Banner（Figma Desktop - 4 切图） ======= -->
-    <section class='hero-banner' aria-labelledby='cms-title'>
-        <div class='hero-bg' aria-hidden='true'>
-            <img class='hero-bg-img' src='/images/cms-guide/hero-bg.png' alt='' />
+    <!-- ======= Hero Banner ======= -->
+    <section class='relative pt-[38px] pb-12 px-6 text-center isolate overflow-hidden min-h-[215px] max-lg:pt-8 max-lg:pb-10 max-lg:px-5 max-sm:pt-6 max-sm:pb-8 max-sm:px-4' aria-labelledby='cms-title'>
+        <div class='absolute inset-0 z-0 pointer-events-none overflow-hidden' aria-hidden='true'>
+            <img class='absolute inset-0 w-full h-full object-cover object-top block animate-hero-fade-in motion-reduce:animate-none motion-reduce:opacity-100' src='/images/cms-guide/hero-bg.png' alt='' />
         </div>
-        <div class='hero-content'>
-            <h1 class='hero-title' id='cms-title'>{tp.hero.title}</h1>
-            {tp.hero.subs.map((s) => <p class='hero-sub'>{s}</p>)}
+        <div class='relative z-[1] max-w-[720px] mx-auto'>
+            <h1 id='cms-title' class='text-[clamp(2.5rem,5.5vw,4.5rem)] font-semibold text-brand-dark m-0 mb-5 tracking-[-0.05em] leading-[1.1] [text-shadow:0_4px_14px_rgba(3,15,32,0.08)] animate-hero-fade-up [animation-delay:0.1s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-sm:mb-3'>
+                {tp.hero.title}
+            </h1>
+            {tp.hero.subs.map((s, i) => (
+                <p class='hero-sub text-[clamp(0.875rem,1vw,1rem)] text-[#1a2332] m-0 leading-[1.7] tracking-[-0.02em] animate-hero-fade-up motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-sm:text-[13px] max-sm:leading-[1.65]'
+                   style={`animation-delay:${subDelays[i] ?? '0.56s'}`}>
+                    {s}
+                </p>
+            ))}
         </div>
     </section>
 
     <!-- ======= Guide content ======= -->
-    <main class='guide-main'>
+    <main class='relative z-[2] w-full max-w-[1120px] mx-auto px-10 pt-6 pb-[120px] flex flex-col gap-10 max-lg:px-7 max-lg:pt-4 max-lg:pb-[100px] max-lg:gap-9 max-sm:px-[18px] max-sm:pt-2 max-sm:pb-20 max-sm:gap-8'>
         {
             tp.steps.map((step, i) => (
-                <article class='step' id={step.id} style={`--step-delay: ${0.56 + i * 0.06}s`}>
-                    <h2 class='step-title'>
-                        <span class='step-num'>{step.num}</span>
-                        <span class='step-divider'>｜</span>
-                        <span class='step-name'>{step.name}</span>
+                <article
+                    class='flex flex-col gap-4 animate-hero-fade-up [animation-delay:var(--step-delay,0.56s)] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-sm:gap-3'
+                    id={step.id}
+                    style={`--step-delay: ${0.56 + i * 0.06}s`}
+                >
+                    <h2 class='flex items-baseline gap-0 m-0 font-semibold leading-[1.2] tracking-[-0.04em] text-brand-dark'>
+                        <span class='text-[clamp(1.75rem,2.4vw,2.25rem)] font-bold text-brand-dark [font-feature-settings:"tnum"] mr-2 max-sm:text-[28px]'>{step.num}</span>
+                        <span class='text-[clamp(1.5rem,2vw,1.875rem)] text-[#a7b8d0] mr-[6px] font-normal max-sm:text-[22px]'>｜</span>
+                        <span class='text-[clamp(1.5rem,2vw,1.875rem)] text-brand-dark font-semibold max-sm:text-[22px]'>{step.name}</span>
                     </h2>
 
                     {'bodyHtml' in step && step.bodyHtml !== undefined && (
-                        <p class='step-body'>
+                        <p class='text-[15px] leading-[1.8] text-[#1a2332] m-0 tracking-[-0.01em] max-sm:text-sm max-sm:leading-[1.75]'>
                             <Fragment set:html={step.bodyHtml} />
                         </p>
                     )}
@@ -46,32 +59,30 @@ const tp = t.cmsGuide;
                     {'bodyHtmls' in step &&
                         step.bodyHtmls !== undefined &&
                         step.bodyHtmls.map((html) => (
-                            <p class='step-body'>
+                            <p class='text-[15px] leading-[1.8] text-[#1a2332] m-0 tracking-[-0.01em] max-sm:text-sm max-sm:leading-[1.75]'>
                                 <Fragment set:html={html} />
                             </p>
                         ))}
 
                     {'list' in step && step.list !== undefined && (
-                        <ul class='step-list'>
+                        <ul class='step-list m-0 pl-6 text-[15px] leading-[1.9] text-[#1a2332] max-sm:text-sm'>
                             {step.list.map((item) => (
-                                <li>{item}</li>
+                                <li class='pl-1'>{item}</li>
                             ))}
                         </ul>
                     )}
 
                     {'afterListHtml' in step && step.afterListHtml !== undefined && (
-                        <p class='step-body'>
+                        <p class='text-[15px] leading-[1.8] text-[#1a2332] m-0 tracking-[-0.01em] max-sm:text-sm max-sm:leading-[1.75]'>
                             <Fragment set:html={step.afterListHtml} />
                         </p>
                     )}
 
                     {step.tip?.text && (
-                        <div class='tip tip--inline'>
-                            <p>
-                                <span class='tip-bell' aria-hidden='true'>
-                                    {tp.tipBell}
-                                </span>
-                                <span class='tip-label'>{tp.tipLabel}</span>
+                        <div class='tip text-sm leading-[1.7] text-[#c66a2a] bg-[rgba(245,166,35,0.06)] border-l-[3px] border-[rgba(245,166,35,0.5)] rounded-r-lg py-3 px-4 mt-1 max-sm:text-[13px] max-sm:py-2.5 max-sm:px-3'>
+                            <p class='m-0'>
+                                <span class='inline-block mr-1' aria-hidden='true'>{tp.tipBell}</span>
+                                <span class='font-semibold mr-0.5'>{tp.tipLabel}</span>
                                 {step.tip.text}
                             </p>
                         </div>
@@ -81,354 +92,8 @@ const tp = t.cmsGuide;
         }
     </main>
 
-    <!-- ======= 底部同心圆装饰（Figma 切图） ======= -->
-    <div class='bottom-circles' aria-hidden='true'>
-        <img src='/images/cms-guide/bottom-circles.png' alt='' />
+    <!-- ======= Bottom circles decoration ======= -->
+    <div class='absolute bottom-0 left-1/2 -translate-x-1/2 w-[min(710px,100%)] pointer-events-none z-0 animate-hero-fade-in [animation-delay:0.92s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:[transform:translateX(-50%)] max-lg:w-[min(560px,100%)] max-sm:w-[min(380px,100%)]' aria-hidden='true'>
+        <img src='/images/cms-guide/bottom-circles.png' alt='' class='block w-full h-auto' />
     </div>
 </BaseLayout>
-
-<style>
-    :global(.page) {
-        position: relative;
-        overflow: hidden;
-        --hero-ease: cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    @keyframes heroFadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-
-    @keyframes heroFadeUp {
-        from {
-            opacity: 0;
-            transform: translateY(16px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes heroFadeDown {
-        from {
-            opacity: 0;
-            transform: translateY(-12px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    :global(.navbar) {
-        animation: heroFadeDown 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
-    }
-
-    /* ===== Hero Banner ===== */
-    .hero-banner {
-        position: relative;
-        padding: 38px 24px 48px;
-        text-align: center;
-        isolation: isolate;
-        overflow: hidden;
-        min-height: 215px;
-    }
-
-    .hero-bg {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
-        overflow: hidden;
-    }
-
-    .hero-bg-img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        display: block;
-        animation: heroFadeIn 0.6s var(--hero-ease) both;
-    }
-
-    .hero-content {
-        position: relative;
-        z-index: 1;
-        max-width: 720px;
-        margin: 0 auto;
-    }
-
-    .hero-title {
-        font-size: clamp(2.5rem, 5.5vw, 4.5rem);
-        font-weight: 600;
-        color: #030f20;
-        margin: 0 0 20px;
-        letter-spacing: -0.05em;
-        line-height: 1.1;
-        text-shadow: 0 4px 14px rgba(3, 15, 32, 0.08);
-        animation: heroFadeUp 0.45s var(--hero-ease) both;
-        animation-delay: 0.1s;
-    }
-
-    .hero-sub {
-        font-size: clamp(0.875rem, 1vw, 1rem);
-        color: #1a2332;
-        margin: 0;
-        line-height: 1.7;
-        letter-spacing: -0.02em;
-        animation: heroFadeUp 0.45s var(--hero-ease) both;
-    }
-
-    .hero-sub:nth-of-type(1) {
-        animation-delay: 0.4s;
-    }
-
-    .hero-sub:nth-of-type(2) {
-        animation-delay: 0.48s;
-    }
-
-    .hero-sub:nth-of-type(3) {
-        animation-delay: 0.56s;
-    }
-
-    .hero-sub + .hero-sub {
-        margin-top: 2px;
-    }
-
-    /* ===== Guide content ===== */
-    .guide-main {
-        position: relative;
-        z-index: 2;
-        width: 100%;
-        max-width: 1120px;
-        margin: 0 auto;
-        padding: 24px 40px 120px;
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .step {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        animation: heroFadeUp 0.45s var(--hero-ease) both;
-        animation-delay: var(--step-delay, 0.56s);
-    }
-
-    .step-title {
-        display: flex;
-        align-items: baseline;
-        gap: 0;
-        margin: 0;
-        font-weight: 600;
-        line-height: 1.2;
-        letter-spacing: -0.04em;
-        color: #030f20;
-    }
-
-    .step-num {
-        font-size: clamp(1.75rem, 2.4vw, 2.25rem);
-        font-weight: 700;
-        color: #030f20;
-        font-feature-settings: 'tnum';
-        margin-right: 8px;
-    }
-
-    .step-divider {
-        font-size: clamp(1.5rem, 2vw, 1.875rem);
-        color: #a7b8d0;
-        margin: 0 6px 0 0;
-        font-weight: 400;
-    }
-
-    .step-name {
-        font-size: clamp(1.5rem, 2vw, 1.875rem);
-        color: #030f20;
-        font-weight: 600;
-    }
-
-    .step-body {
-        font-size: 15px;
-        line-height: 1.8;
-        color: #1a2332;
-        margin: 0;
-        letter-spacing: -0.01em;
-    }
-
-    .step-list {
-        margin: 0;
-        padding-left: 24px;
-        font-size: 15px;
-        line-height: 1.9;
-        color: #1a2332;
-    }
-
-    .step-list li {
-        padding-left: 4px;
-    }
-
-    .step-list li::marker {
-        color: #5277c3;
-    }
-
-    /* "前两周" 高亮（red 胶囊）—— 通过 set:html 注入，需要 :global */
-    :global(.hl-warn) {
-        display: inline-block;
-        padding: 0 8px;
-        margin: 0 2px;
-        color: #d94f4f;
-        font-weight: 600;
-        border: 1px solid rgba(217, 79, 79, 0.45);
-        border-radius: 8px;
-        background: rgba(217, 79, 79, 0.06);
-    }
-
-    /* 提示框（🔔） */
-    .tip {
-        font-size: 14px;
-        line-height: 1.7;
-        color: #c66a2a;
-        background: rgba(245, 166, 35, 0.06);
-        border-left: 3px solid rgba(245, 166, 35, 0.5);
-        border-radius: 0 8px 8px 0;
-        padding: 12px 16px;
-        margin-top: 4px;
-    }
-
-    .tip p {
-        margin: 0;
-    }
-
-    .tip p + p {
-        margin-top: 4px;
-    }
-
-    .tip-head {
-        font-weight: 600;
-    }
-
-    .tip-bell {
-        display: inline-block;
-        margin-right: 4px;
-    }
-
-    .tip--inline {
-        padding: 8px 14px;
-    }
-
-    .tip-label {
-        font-weight: 600;
-        margin-right: 2px;
-    }
-
-    /* ===== 底部同心圆装饰 ===== */
-    .bottom-circles {
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: min(710px, 100%);
-        pointer-events: none;
-        z-index: 0;
-        animation: heroFadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
-        animation-delay: 0.92s;
-    }
-
-    .bottom-circles img {
-        display: block;
-        width: 100%;
-        height: auto;
-    }
-
-    @media (max-width: 1023px) {
-        .hero-banner {
-            padding: 32px 20px 40px;
-        }
-
-        .guide-main {
-            padding: 16px 28px 100px;
-            gap: 36px;
-        }
-
-        .bottom-circles {
-            width: min(560px, 100%);
-        }
-    }
-
-    @media (max-width: 639px) {
-        .hero-banner {
-            padding: 24px 16px 32px;
-        }
-
-        .hero-title {
-            margin-bottom: 12px;
-        }
-
-        .hero-sub {
-            font-size: 13px;
-            line-height: 1.65;
-        }
-
-        .guide-main {
-            padding: 8px 18px 80px;
-            gap: 32px;
-        }
-
-        .step {
-            gap: 12px;
-        }
-
-        .step-num {
-            font-size: 28px;
-        }
-
-        .step-divider,
-        .step-name {
-            font-size: 22px;
-        }
-
-        .step-body {
-            font-size: 14px;
-            line-height: 1.75;
-        }
-
-        .step-list {
-            font-size: 14px;
-        }
-
-        .tip {
-            font-size: 13px;
-            padding: 10px 12px;
-        }
-
-        .bottom-circles {
-            width: min(380px, 100%);
-        }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-        :global(.navbar),
-        .hero-bg-img,
-        .hero-title,
-        .hero-sub,
-        .step {
-            animation: none !important;
-            opacity: 1 !important;
-            transform: none !important;
-        }
-
-        .bottom-circles {
-            animation: none !important;
-            opacity: 1 !important;
-            transform: translateX(-50%) !important;
-        }
-    }
-</style>
