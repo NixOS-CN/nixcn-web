@@ -9,7 +9,7 @@
   --color-border: rgba(155, 206, 241, 0.8);
 
   /* Typography */
-  --font-family-sans: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+  --font-sans: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     sans-serif;
 
   /* Easings */
@@ -59,7 +59,7 @@
   *, *::before, *::after { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; min-height: 100%; }
   body {
-    font-family: var(--font-family-sans);
+    font-family: var(--font-sans);
     background: #ffffff;
     color: var(--color-brand-dark);
     -webkit-font-smoothing: antialiased;
