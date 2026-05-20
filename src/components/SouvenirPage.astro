@@ -91,13 +91,23 @@ const ts = tp.comingSoon;
                     aria-haspopup='dialog'
                 >
                     {tp.card.cta}
-                    <img
-                        class='block w-[35px] h-[35px] flex-shrink-0 max-sm:w-7 max-sm:h-7'
-                        src='/images/souvenir/cta-arrow.png'
-                        alt=''
-                        width='35'
-                        height='35'
-                    />
+                    <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='24'
+                        height='24'
+                        viewBox='0 0 24 24'
+                        fill='none'
+                        stroke='currentColor'
+                        stroke-width='2'
+                        stroke-linecap='round'
+                        stroke-linejoin='round'
+                        class='lucide lucide-external-link-icon lucide-external-link'
+                    >
+                        <path d='M15 3h6v6'></path><path d='M10 14 21 3'></path><path
+                            d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'
+                        >
+                        </path>
+                    </svg>
                 </button>
             </div>
         </section>
@@ -153,14 +163,6 @@ const ts = tp.comingSoon;
                 {ts.close}
             </button>
         </div>
-    </div>
-
-    <!-- ======= Bottom circles decoration ======= -->
-    <div
-        class='absolute bottom-0 left-1/2 -translate-x-1/2 w-[min(710px,100%)] pointer-events-none z-0 animate-hero-fade-in [animation-delay:0.4s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:[transform:translateX(-50%)] max-lg:w-[min(560px,100%)] max-sm:w-[min(380px,100%)]'
-        aria-hidden='true'
-    >
-        <img src='/images/souvenir/bottom-circles.png' alt='' class='block w-full h-auto' />
     </div>
 </BaseLayout>
 
