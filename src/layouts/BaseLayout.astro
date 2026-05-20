@@ -18,9 +18,7 @@ const { title, description, lang } = Astro.props;
         <title>{title}</title>
     </head>
     <body>
-        <div class='page'>
-            <slot />
-        </div>
+        <slot />
     </body>
 </html>
 
@@ -49,11 +47,9 @@ const { title, description, lang } = Astro.props;
         background: #ffffff;
         color: #030f20;
         -webkit-font-smoothing: antialiased;
-    }
-
-    .page {
         min-height: 100dvh;
         display: flex;
         flex-direction: column;
+        padding: 0 16px;
     }
 </style>
