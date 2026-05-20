@@ -2,7 +2,7 @@
 import Navbar from './Navbar.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { type Locale, getTranslations, getPageUrl } from '../i18n/config';
-
+import { ArrowRight } from '@lucide/astro';
 interface Props {
     locale: Locale;
 }
@@ -85,10 +85,11 @@ const url = (p: Parameters<typeof getPageUrl>[1]) => getPageUrl(locale, p);
                 </p>
                 <div class='flex gap-3 flex-wrap max-sm:flex-col max-sm:items-start max-sm:gap-[10px]'>
                     <a
-                        class='inline-flex items-center px-5 py-3 rounded-3xl text-base font-medium tracking-[-0.05em] no-underline transition-[background,border-color,transform,box-shadow] duration-200 whitespace-nowrap cursor-pointer font-[inherit] animate-hero-fade-up [animation-delay:0.42s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none bg-brand-blue text-white border-[1.5px] border-brand-blue hover:bg-[#4269b8] hover:border-[#4269b8] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(82,119,195,0.35)] max-sm:w-full max-sm:justify-center'
+                        class='inline-flex items-center px-5 py-3 rounded-3xl text-base font-medium tracking-[-0.05em] no-underline transition-[background,border-color,transform,box-shadow] duration-200 whitespace-nowrap cursor-pointer font-[inherit] animate-hero-fade-up [animation-delay:0.42s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none bg-brand-blue text-white border-[1.5px] border-brand-blue hover:bg-[#4269b8] hover:border-[#4269b8] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(82,119,195,0.35)] max-sm:w-full max-sm:justify-center gap-1'
                         href='https://nix.org.cn/app/'
                     >
                         {tp.hero.ctaPrimary}
+                        <ArrowRight size={24} />
                     </a>
                     <a
                         class='inline-flex items-center px-5 py-3 rounded-3xl text-base font-medium tracking-[-0.05em] no-underline transition-[background,border-color,transform,box-shadow] duration-200 whitespace-nowrap cursor-pointer font-[inherit] animate-hero-fade-up [animation-delay:0.5s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none bg-[rgba(249,251,255,0.45)] text-brand-blue border-[1.5px] border-brand-blue backdrop-blur-[10px] backdrop-saturate-[140%] [-webkit-backdrop-filter:blur(10px)_saturate(1.4)] hover:bg-[rgba(82,119,195,0.12)] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(82,119,195,0.15)] max-sm:w-full max-sm:justify-center'

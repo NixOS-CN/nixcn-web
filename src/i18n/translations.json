@@ -26,8 +26,8 @@
                 "headlineBadge": "Nix",
                 "headlineAfter": "\u00a0实践被看见",
                 "lead": "欢迎回来相聚。这是又一次面向中文社区的 Nix / NixOS 线下聚会——更丰富，也更好玩。我们希望把正在使用 Nix、研究 Nix，或刚刚开始了解 Nix 的人聚在一起。让真实的实践、问题与探索，在现场被看见。",
-                "ctaPrimary": "报名参会\u00a0→",
-                "ctaSecondary": "CMS 系统指引\u00a0👈"
+                "ctaPrimary": "报名参会",
+                "ctaSecondary": "CMS 系统指引"
             }
         },
         "calendar": {
