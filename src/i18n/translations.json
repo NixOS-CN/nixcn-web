@@ -150,8 +150,8 @@
             },
             "card": {
                 "title": "打造你的专属参会证 ✨",
-                "body": "提供纪念品的个性化设定服务。点击下方按钮跳转至定制通道，录入你的身份参数以生成定制化参会证。",
-                "cta": "前往个性化定制",
+                "body": "提供纪念品的个性化设定服务。点击下方按钮跳转至定制通道，录入你的身份信息和偏好以生成定制化参会证。",
+                "cta": "定制收集表暂未开放",
                 "ctaUrl": "https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZ__u0jrMtUODNTWUpJSEs0STZZWThNTTJVUlNHN01OQy4u&Token=f0e798fadec04532bf2ef8b474a4d7b2"
             },
             "comingSoon": {
@@ -312,12 +312,12 @@
             },
             "hero": {
                 "title": "Souvenirs",
-                "sub": "DIY your personalized badge here and unlock more event-limited souvenir information in advance."
+                "sub": "Customize your badge here and unlock more exclusive event souvenir details in advance."
             },
             "card": {
                 "title": "Create Your Exclusive Badge ✨",
-                "body": "We offer personalized souvenir settings. Click the button below to open the customization channel and enter your details to generate a customized conference badge.",
-                "cta": "Go to Customization",
+                "body": "Personalize your souvenirs. Click the button below to open the customization form and enter your details to generate a customized conference badge.",
+                "cta": "Not Open Yet",
                 "ctaUrl": "https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAZ__u0jrMtUODNTWUpJSEs0STZZWThNTTJVUlNHN01OQy4u&Token=f0e798fadec04532bf2ef8b474a4d7b2"
             },
             "comingSoon": {
