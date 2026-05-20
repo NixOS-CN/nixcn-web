@@ -57,7 +57,7 @@ const foodMapSrc = locale === 'en' ? '/images/calendar/food-map-en.png' : '/imag
                 <span class='text-xl leading-none inline-block mr-2 align-middle'>{tp.agenda.leadEmoji}</span>
                 <span><Fragment set:html={tp.agenda.leadHtml} /></span>
             </p>
-            <ul class='bullet-list list-none m-0 pl-3 flex flex-col gap-3'>
+            <ul class='bullet-list list-none m-0 pl-3 flex flex-col gap-1'>
                 {
                     tp.agenda.bullets.map((html) => (
                         <li class='relative px-[22px] pb-1 text-xl leading-[1.6] text-[#33466d] tracking-[-0.05em] font-medium [background-position:22px_100%] [background-size:calc(100%-44px)_8px] max-sm:text-base max-sm:[background-size:calc(100%-44px)_6px]'>
@@ -82,25 +82,21 @@ const foodMapSrc = locale === 'en' ? '/images/calendar/food-map-en.png' : '/imag
                 class='info-card bg-white border border-brand-blue rounded-2xl p-5 px-[22px] flex flex-col gap-[22px] shadow-[0_4px_16px_rgba(82,119,195,0.08)] max-sm:p-4 max-sm:gap-4 max-sm:rounded-[14px]'
             >
                 <div class='flex items-start gap-3 flex-wrap max-sm:flex-col max-sm:gap-1'>
-                    <span
-                        class='text-base text-brand-dark tracking-[-0.05em] leading-[1.6] flex-shrink-0 pt-px max-sm:text-sm'
-                    >
+                    <span class='text-base text-brand-dark leading-[1.6] flex-shrink-0 pt-px max-sm:text-sm'>
                         {tp.schedule.timeLabel}
                     </span>
-                    <span class='text-xl font-medium text-brand-dark tracking-[-0.05em] leading-[1.4] max-sm:text-base'>
+                    <span class='text-xl font-medium text-brand-dark tleading-[1.4] max-sm:text-base'>
                         {tp.schedule.timeValue}
                     </span>
                 </div>
                 <div class='flex items-start gap-3 flex-wrap max-sm:flex-col max-sm:gap-1'>
-                    <span
-                        class='text-base text-brand-dark tracking-[-0.05em] leading-[1.6] flex-shrink-0 pt-px max-sm:text-sm'
-                    >
+                    <span class='text-base text-brand-dark leading-[1.6] flex-shrink-0 pt-px max-sm:text-sm'>
                         {tp.schedule.flowLabel}
                     </span>
-                    <ul class='timeline-list m-0 pl-[22px] list-disc flex flex-col gap-2'>
+                    <ul class='timeline-list m-0 pl-[22px] list-disc flex flex-col gap-1'>
                         {
                             tp.schedule.flow.map((item) => (
-                                <li class='text-xl font-medium text-brand-dark tracking-[-0.05em] leading-[1.4] max-sm:text-base'>
+                                <li class='text-xl font-medium text-brand-dark leading-[1.4] max-sm:text-base'>
                                     <Fragment set:html={item} />
                                 </li>
                             ))
@@ -122,7 +118,7 @@ const foodMapSrc = locale === 'en' ? '/images/calendar/food-map-en.png' : '/imag
                 <span>{tp.food.title}</span>
             </p>
             <figure
-                class='food-map flex-1 m-0 min-h-40 rounded-[14px] overflow-hidden border border-[rgba(82,119,195,0.3)] bg-[#f6fafc] flex max-lg:block max-sm:rounded-xl'
+                class='food-map flex-1 m-0 min-h-40 rounded-[14px] overflow-hidden bg-[#f6fafc] flex max-lg:block max-sm:rounded-xl'
             >
                 <img
                     src={foodMapSrc}
