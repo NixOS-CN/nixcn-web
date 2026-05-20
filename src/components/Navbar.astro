@@ -86,19 +86,19 @@ const switchHref = url(otherLocale, activePage);
 
     <details class='hidden ml-2 max-lg:block'>
         <summary class='hamburger flex flex-col gap-[5px] p-[8px_4px] cursor-pointer list-none' aria-label={t.nav.ariaMenu}>
-            <span class='block w-[22px] h-0.5 bg-brand-blue rounded-sm transition-all duration-200'></span>
-            <span class='block w-[22px] h-0.5 bg-brand-blue rounded-sm transition-all duration-200'></span>
-            <span class='block w-[22px] h-0.5 bg-brand-blue rounded-sm transition-all duration-200'></span>
+            <span class='block w-[22px] h-0.5 bg-brand-blue rounded-[2px] transition-all duration-200'></span>
+            <span class='block w-[22px] h-0.5 bg-brand-blue rounded-[2px] transition-all duration-200'></span>
+            <span class='block w-[22px] h-0.5 bg-brand-blue rounded-[2px] transition-all duration-200'></span>
         </summary>
         <nav class='mobile-nav fixed top-14 left-2 right-2 bg-[rgba(249,251,255,0.97)] backdrop-blur-[10px] [-webkit-backdrop-filter:blur(10px)] border border-[rgba(155,206,241,0.5)] rounded-2xl py-4 px-5 flex flex-col gap-1 z-[100] shadow-[0_8px_32px_rgba(82,119,195,0.12)]' aria-label={t.nav.ariaMobile}>
-            <a href={url(locale, 'home')} aria-current={activePage === 'home' ? 'page' : undefined} class='text-[15px] font-medium text-brand-blue no-underline py-2.5 border-b border-[rgba(155,206,241,0.3)] transition-opacity duration-150 hover:opacity-70'>{t.nav.home}</a>
-            <a href={url(locale, 'calendar')} aria-current={activePage === 'calendar' ? 'page' : undefined} class='text-[15px] font-medium text-brand-blue no-underline py-2.5 border-b border-[rgba(155,206,241,0.3)] transition-opacity duration-150 hover:opacity-70'>{t.nav.calendar}</a>
-            <a href={url(locale, 'cmsGuide')} aria-current={activePage === 'cmsGuide' ? 'page' : undefined} class='text-[15px] font-medium text-brand-blue no-underline py-2.5 border-b border-[rgba(155,206,241,0.3)] transition-opacity duration-150 hover:opacity-70'>{t.nav.cmsGuide}</a>
-            <a href={url(locale, 'souvenir')} aria-current={activePage === 'souvenir' ? 'page' : undefined} class='text-[15px] font-medium text-brand-blue no-underline py-2.5 border-b border-[rgba(155,206,241,0.3)] transition-opacity duration-150 hover:opacity-70'>{t.nav.souvenir}</a>
+            <a href={url(locale, 'home')} aria-current={activePage === 'home' ? 'page' : undefined} class='text-[15px] font-medium text-brand-blue no-underline py-2.5 border-b border-[rgba(155,206,241,0.3)] transition-opacity duration-150 hover:opacity-70 last:border-b-0'>{t.nav.home}</a>
+            <a href={url(locale, 'calendar')} aria-current={activePage === 'calendar' ? 'page' : undefined} class='text-[15px] font-medium text-brand-blue no-underline py-2.5 border-b border-[rgba(155,206,241,0.3)] transition-opacity duration-150 hover:opacity-70 last:border-b-0'>{t.nav.calendar}</a>
+            <a href={url(locale, 'cmsGuide')} aria-current={activePage === 'cmsGuide' ? 'page' : undefined} class='text-[15px] font-medium text-brand-blue no-underline py-2.5 border-b border-[rgba(155,206,241,0.3)] transition-opacity duration-150 hover:opacity-70 last:border-b-0'>{t.nav.cmsGuide}</a>
+            <a href={url(locale, 'souvenir')} aria-current={activePage === 'souvenir' ? 'page' : undefined} class='text-[15px] font-medium text-brand-blue no-underline py-2.5 border-b border-[rgba(155,206,241,0.3)] transition-opacity duration-150 hover:opacity-70 last:border-b-0'>{t.nav.souvenir}</a>
             <hr class='border-0 border-t border-[rgba(155,206,241,0.4)] my-1' />
-            <a href='https://t.me/nixos_cn' target='_blank' rel='noopener noreferrer' class='text-[15px] font-medium text-brand-blue no-underline py-2.5 border-b border-[rgba(155,206,241,0.3)] transition-opacity duration-150 hover:opacity-70'>Telegram</a>
-            <a href='https://matrix.to/#/#nixos-cn:matrix.org' target='_blank' rel='noopener noreferrer' class='text-[15px] font-medium text-brand-blue no-underline py-2.5 border-b border-[rgba(155,206,241,0.3)] transition-opacity duration-150 hover:opacity-70'>Matrix</a>
-            <a href={switchHref} class='text-[15px] font-medium text-brand-blue no-underline py-2.5 border-b border-[rgba(155,206,241,0.3)] transition-opacity duration-150 hover:opacity-70'>{t.nav.ariaLangSwitch}</a>
+            <a href='https://t.me/nixos_cn' target='_blank' rel='noopener noreferrer' class='text-[15px] font-medium text-brand-blue no-underline py-2.5 border-b border-[rgba(155,206,241,0.3)] transition-opacity duration-150 hover:opacity-70 last:border-b-0'>Telegram</a>
+            <a href='https://matrix.to/#/#nixos-cn:matrix.org' target='_blank' rel='noopener noreferrer' class='text-[15px] font-medium text-brand-blue no-underline py-2.5 border-b border-[rgba(155,206,241,0.3)] transition-opacity duration-150 hover:opacity-70 last:border-b-0'>Matrix</a>
+            <a href={switchHref} class='text-[15px] font-medium text-brand-blue no-underline py-2.5 border-b border-[rgba(155,206,241,0.3)] transition-opacity duration-150 hover:opacity-70 last:border-b-0'>{t.nav.ariaLangSwitch}</a>
         </nav>
     </details>
 </header>
