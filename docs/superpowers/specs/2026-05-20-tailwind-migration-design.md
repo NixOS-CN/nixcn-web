@@ -41,8 +41,8 @@ Register all project-specific design tokens as Tailwind CSS variables:
   --font-family-sans: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
   /* Easings */
-  --ease-hero: cubic-bezier(0.25, 0.1, 0.25, 1);
-  --ease-modal: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-hero: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-modal: cubic-bezier(0.22, 1, 0.36, 1);
 
   /* Named animations (name maps to @keyframes below) */
   --animate-hero-fade-up: heroFadeUp 0.55s var(--ease-hero) both;
@@ -122,10 +122,15 @@ Each is converted by reading its current `<style>` block, mapping every rule to 
 | Surface bg `rgba(249,251,255,0.9)` | `bg-surface` |
 | Border color `rgba(155,206,241,0.8)` | `border-border` |
 
+### Edge cases
+
+**`--step-delay` (CmsGuidePage):** Each `.step` element sets `--step-delay` as an inline style in the Astro frontmatter JSX. The `<style>` block then reads it via `animation-delay: var(--step-delay, 0.56s)`. After migration, the inline style attribute stays as-is; the Tailwind class uses the same variable: `[animation-delay:var(--step-delay,0.56s)]`.
+
+**`--gloss-x` / `--gloss-y` (HomePage badge):** `badge-tilt.ts` updates these CSS custom properties on the badge element via `style.setProperty(...)`. The existing CSS uses them inside a `radial-gradient`. Because this background value depends on dynamically-changing CSS vars, it cannot be expressed as a static Tailwind arbitrary class. Move this single rule into `@layer components` in `global.css` rather than keeping it in a `<style>` block.
+
 ### Dropped patterns
 
 - All `:global()` selectors (including navbar entrance animation)
-- The `--gloss-x` / `--gloss-y` CSS variables (JS-driven hover effect — keep the JS, keep the inline `style` attribute if present, but don't add a CSS variable declaration)
 - `decoFadeIn` keyframe (was used only by removed `.deco-line` elements)
 
 ### `prefers-reduced-motion`
