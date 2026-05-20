@@ -18,44 +18,82 @@ const url = (p: Parameters<typeof getPageUrl>[1]) => getPageUrl(locale, p);
     <Navbar locale={locale} activePage='home' />
 
     <!-- ======= Hero Card ======= -->
-    <div class='flex-1 relative flex flex-col rounded-3xl border-2 border-border bg-[#f9fbff] overflow-hidden min-h-[640px] animate-hero-fade-in motion-reduce:animate-none motion-reduce:opacity-100 max-sm:rounded-2xl max-sm:min-h-auto'>
-
+    <div
+        class='flex-1 relative flex flex-col rounded-3xl border-2 border-border bg-[#f9fbff] overflow-hidden min-h-[640px] animate-hero-fade-in motion-reduce:animate-none motion-reduce:opacity-100 max-sm:rounded-2xl max-sm:min-h-auto'
+    >
         <!-- Layer 0: dot-grid texture -->
-        <div class='absolute inset-0 z-0 [background-image:radial-gradient(ellipse_80%_70%_at_60%_48%,transparent_15%,rgba(249,251,255,0.85)_85%),radial-gradient(circle,rgba(126,186,228,0.28)_2.5px,transparent_2.5px)] [background-size:auto,20px_20px] pointer-events-none will-change-transform animate-hero-fade-in [animation-delay:0.06s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:will-change-auto' aria-hidden='true'></div>
+        <div
+            class='absolute inset-0 z-0 [background-image:radial-gradient(ellipse_80%_70%_at_60%_48%,transparent_15%,rgba(249,251,255,0.85)_85%),radial-gradient(circle,rgba(126,186,228,0.28)_2.5px,transparent_2.5px)] [background-size:auto,20px_20px] pointer-events-none will-change-transform animate-hero-fade-in [animation-delay:0.06s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:will-change-auto'
+            aria-hidden='true'
+        >
+        </div>
 
         <!-- Layer 1a: concentric circles -->
-        <div class='absolute inset-0 z-[1] pointer-events-none will-change-transform motion-reduce:will-change-auto' aria-hidden='true'>
-            <div class='absolute rounded-full border-[1.5px] border-[rgba(126,186,228,0.28)] top-0 left-0 shadow-[0_2px_8px_rgba(126,186,228,0.12),0_10px_28px_rgba(126,186,228,0.2)] animate-hero-fade-in [animation-delay:0.1s] w-[502px] h-[502px] translate-x-[-269px] translate-y-[-241px] motion-reduce:animate-none motion-reduce:opacity-100 max-lg:w-[300px] max-lg:h-[300px] max-lg:translate-x-[-160px] max-lg:translate-y-[-144px] max-sm:w-[220px] max-sm:h-[220px] max-sm:translate-x-[-120px] max-sm:translate-y-[-108px]'></div>
-            <div class='absolute rounded-full border-[1.5px] border-[rgba(126,186,228,0.28)] top-0 left-0 shadow-[0_2px_8px_rgba(126,186,228,0.12),0_10px_28px_rgba(126,186,228,0.2)] animate-hero-fade-in [animation-delay:0.16s] w-[459px] h-[459px] translate-x-[-248px] translate-y-[-220px] motion-reduce:animate-none motion-reduce:opacity-100 max-lg:w-[275px] max-lg:h-[275px] max-lg:translate-x-[-148px] max-lg:translate-y-[-132px] max-sm:w-[200px] max-sm:h-[200px] max-sm:translate-x-[-108px] max-sm:translate-y-[-96px]'></div>
-            <div class='absolute rounded-full border-[1.5px] border-[rgba(126,186,228,0.28)] top-0 left-0 shadow-[0_2px_8px_rgba(126,186,228,0.12),0_10px_28px_rgba(126,186,228,0.2)] animate-hero-fade-in [animation-delay:0.22s] w-[408px] h-[408px] translate-x-[-222px] translate-y-[-199px] motion-reduce:animate-none motion-reduce:opacity-100 max-lg:w-[244px] max-lg:h-[244px] max-lg:translate-x-[-133px] max-lg:translate-y-[-119px] max-sm:w-[178px] max-sm:h-[178px] max-sm:translate-x-[-96px] max-sm:translate-y-[-86px]'></div>
+        <div
+            class='absolute inset-0 z-[1] pointer-events-none will-change-transform motion-reduce:will-change-auto'
+            aria-hidden='true'
+        >
+            <div
+                class='absolute rounded-full border-[1.5px] border-[rgba(126,186,228,0.28)] top-0 left-0 shadow-[0_2px_8px_rgba(126,186,228,0.12),0_10px_28px_rgba(126,186,228,0.2)] animate-hero-fade-in [animation-delay:0.1s] w-[502px] h-[502px] translate-x-[-269px] translate-y-[-241px] motion-reduce:animate-none motion-reduce:opacity-100 max-lg:w-[300px] max-lg:h-[300px] max-lg:translate-x-[-160px] max-lg:translate-y-[-144px] max-sm:w-[220px] max-sm:h-[220px] max-sm:translate-x-[-120px] max-sm:translate-y-[-108px]'
+            >
+            </div>
+            <div
+                class='absolute rounded-full border-[1.5px] border-[rgba(126,186,228,0.28)] top-0 left-0 shadow-[0_2px_8px_rgba(126,186,228,0.12),0_10px_28px_rgba(126,186,228,0.2)] animate-hero-fade-in [animation-delay:0.16s] w-[459px] h-[459px] translate-x-[-248px] translate-y-[-220px] motion-reduce:animate-none motion-reduce:opacity-100 max-lg:w-[275px] max-lg:h-[275px] max-lg:translate-x-[-148px] max-lg:translate-y-[-132px] max-sm:w-[200px] max-sm:h-[200px] max-sm:translate-x-[-108px] max-sm:translate-y-[-96px]'
+            >
+            </div>
+            <div
+                class='absolute rounded-full border-[1.5px] border-[rgba(126,186,228,0.28)] top-0 left-0 shadow-[0_2px_8px_rgba(126,186,228,0.12),0_10px_28px_rgba(126,186,228,0.2)] animate-hero-fade-in [animation-delay:0.22s] w-[408px] h-[408px] translate-x-[-222px] translate-y-[-199px] motion-reduce:animate-none motion-reduce:opacity-100 max-lg:w-[244px] max-lg:h-[244px] max-lg:translate-x-[-133px] max-lg:translate-y-[-119px] max-sm:w-[178px] max-sm:h-[178px] max-sm:translate-x-[-96px] max-sm:translate-y-[-86px]'
+            >
+            </div>
         </div>
 
         <!-- Layer 1b: NixOS snowflake canvas -->
-        <div class='absolute right-[-80px] bottom-[-120px] z-[2] pointer-events-none leading-none animate-hero-fade-in [animation-delay:0.18s] motion-reduce:animate-none motion-reduce:opacity-100 max-lg:right-[-120px] max-lg:bottom-[-140px] max-lg:scale-[0.7] max-lg:origin-bottom-right max-sm:block max-sm:right-[-90px] max-sm:bottom-[-100px] max-sm:scale-[0.7] max-sm:origin-bottom-right max-sm:animate-hero-fade-in-70 motion-reduce:max-sm:opacity-70 [@media(max-width:639px)_and_(max-height:683px)]:hidden' aria-hidden='true'>
+        <div
+            class='absolute right-[-80px] bottom-[-120px] z-[2] pointer-events-none leading-none animate-hero-fade-in [animation-delay:0.18s] motion-reduce:animate-none motion-reduce:opacity-100 max-lg:right-[-120px] max-lg:bottom-[-140px] max-lg:scale-[0.7] max-lg:origin-bottom-right max-sm:block max-sm:right-[-90px] max-sm:bottom-[-100px] max-sm:scale-[0.7] max-sm:origin-bottom-right max-sm:animate-hero-fade-in-70 motion-reduce:max-sm:opacity-70 [@media(max-width:639px)_and_(max-height:683px)]:hidden'
+            aria-hidden='true'
+        >
             <canvas id='nixflake' class='block max-w-none pointer-events-none'></canvas>
         </div>
 
         <!-- Layer 2: foreground content -->
-        <div class='flex-1 relative z-[3] flex items-center min-h-[640px] p-12 px-20 max-lg:p-10 max-lg:px-10 max-lg:pb-12 max-lg:min-h-[520px] max-sm:p-8 max-sm:px-6 max-sm:pb-11 max-sm:min-h-[560px]'>
+        <div
+            class='flex-1 relative z-[3] flex items-center min-h-[640px] p-12 px-20 max-lg:p-10 max-lg:px-10 max-lg:pb-12 max-lg:min-h-[520px] max-sm:p-8 max-sm:px-6 max-sm:pb-11 max-sm:min-h-[560px]'
+        >
             <div class='w-full max-w-[640px] will-change-transform motion-reduce:will-change-auto max-lg:max-w-full'>
-                <p class='text-[clamp(1.5rem,3.33vw,3rem)] font-semibold tracking-[-0.05em] text-brand-dark m-0 mb-4 leading-[1.2] [text-shadow:0_4px_12px_rgba(3,15,32,0.1)] animate-hero-fade-up [animation-delay:0.12s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none'>
+                <p
+                    class='text-[clamp(1.5rem,3.33vw,3rem)] font-semibold tracking-[-0.05em] text-brand-dark m-0 mb-4 leading-[1.2] [text-shadow:0_4px_12px_rgba(3,15,32,0.1)] animate-hero-fade-up [animation-delay:0.12s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none'
+                >
                     {tp.hero.conferenceTitle}
                     <span class='text-[#7ebae4]'>{tp.hero.year}</span>
                 </p>
-                <h1 class:list={['headline text-[clamp(2rem,4.44vw,4rem)] font-semibold tracking-[-0.05em] text-brand-blue m-0 mb-7 leading-[1.15] [text-shadow:0_6px_18px_rgba(82,119,195,0.18)] [perspective:800px] [perspective-origin:50%_50%] animate-hero-fade-up [animation-delay:0.22s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-sm:leading-[1.35] max-sm:[perspective:none]', { 'headline--split-mobile': locale === 'en' }]}>
-                    {tp.hero.headlineBefore}<span class='nix-highlight relative inline-block py-0.5 px-[14px] leading-[inherit] rounded-full [background:linear-gradient(135deg,rgba(196,226,247,0.65)_0%,rgba(126,186,228,0.42)_48%,rgba(82,140,200,0.34)_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.7),inset_0_-1px_2px_rgba(82,119,195,0.2),0_6px_14px_rgba(82,119,195,0.22),0_14px_30px_rgba(82,119,195,0.14)] [transform-style:preserve-3d] will-change-transform translate-z-0 transition-shadow duration-300 [--gloss-x:30%] [--gloss-y:25%] motion-reduce:will-change-auto motion-reduce:transition-none max-sm:py-0 max-sm:px-[9px] max-sm:pb-0.5 max-sm:rounded-[999px] max-sm:bg-[rgba(197,219,245,0.78)] max-sm:text-brand-blue max-sm:text-[1.22em] max-sm:leading-[1.05] max-sm:align-baseline max-sm:shadow-none max-sm:[text-shadow:3px_4px_0_#9eb8e8] max-sm:![transform:none] max-sm:[transform-style:flat] max-sm:will-change-auto max-sm:transition-none'>{tp.hero.headlineBadge}</span><span
-                        class='headline-tail'
-                        set:html={tp.hero.headlineAfter}
-                    />
+                <h1
+                    class:list={[
+                        'headline text-[clamp(2rem,4.44vw,4rem)] font-semibold tracking-[-0.05em] text-brand-blue m-0 mb-7 leading-[1.15] [text-shadow:0_6px_18px_rgba(82,119,195,0.18)] [perspective:800px] [perspective-origin:50%_50%] animate-hero-fade-up [animation-delay:0.22s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-sm:leading-[1.35] max-sm:[perspective:none]',
+                        { 'headline--split-mobile': locale === 'en' },
+                    ]}
+                >
+                    {tp.hero.headlineBefore}<span
+                        class='nix-highlight relative inline-block py-0.5 px-[14px] leading-[inherit] rounded-full [background:linear-gradient(135deg,rgba(196,226,247,0.65)_0%,rgba(126,186,228,0.42)_48%,rgba(82,140,200,0.34)_100%)] shadow-[inset_0_1px_0_rgba(255,255,255,0.7),inset_0_-1px_2px_rgba(82,119,195,0.2),0_6px_14px_rgba(82,119,195,0.22),0_14px_30px_rgba(82,119,195,0.14)] [transform-style:preserve-3d] will-change-transform translate-z-0 transition-shadow duration-300 [--gloss-x:30%] [--gloss-y:25%] motion-reduce:will-change-auto motion-reduce:transition-none max-sm:py-0 max-sm:px-[9px] max-sm:pb-0.5 max-sm:rounded-[999px] max-sm:bg-[rgba(197,219,245,0.78)] max-sm:text-brand-blue max-sm:text-[1.22em] max-sm:leading-[1.05] max-sm:align-baseline max-sm:shadow-none max-sm:[text-shadow:3px_4px_0_#9eb8e8] max-sm:![transform:none] max-sm:[transform-style:flat] max-sm:will-change-auto max-sm:transition-none'
+                    >
+                        {tp.hero.headlineBadge}
+                    </span><span class='headline-tail' set:html={tp.hero.headlineAfter} />
                 </h1>
-                <p class='text-[clamp(1rem,1.39vw,1.25rem)] text-[#1a2332] m-0 mb-10 leading-[1.65] tracking-[-0.02em] max-w-[480px] animate-hero-fade-up [animation-delay:0.32s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-sm:mb-8'>
+                <p
+                    class='text-[clamp(1rem,1.39vw,1.25rem)] text-[#1a2332] m-0 mb-10 leading-[1.65] tracking-[-0.02em] max-w-[480px] animate-hero-fade-up [animation-delay:0.32s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-sm:mb-8'
+                >
                     {tp.hero.lead}
                 </p>
                 <div class='flex gap-3 flex-wrap max-sm:flex-col max-sm:items-start max-sm:gap-[10px]'>
-                    <a class='inline-flex items-center px-5 py-3 rounded-3xl text-base font-medium tracking-[-0.05em] no-underline transition-[background,border-color,transform,box-shadow] duration-200 whitespace-nowrap cursor-pointer font-[inherit] animate-hero-fade-up [animation-delay:0.42s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none bg-brand-blue text-white border-[1.5px] border-brand-blue hover:bg-[#4269b8] hover:border-[#4269b8] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(82,119,195,0.35)] max-sm:w-full max-sm:justify-center' href='https://nix.org.cn/app/'>
+                    <a
+                        class='inline-flex items-center px-5 py-3 rounded-3xl text-base font-medium tracking-[-0.05em] no-underline transition-[background,border-color,transform,box-shadow] duration-200 whitespace-nowrap cursor-pointer font-[inherit] animate-hero-fade-up [animation-delay:0.42s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none bg-brand-blue text-white border-[1.5px] border-brand-blue hover:bg-[#4269b8] hover:border-[#4269b8] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(82,119,195,0.35)] max-sm:w-full max-sm:justify-center'
+                        href='https://nix.org.cn/app/'
+                    >
                         {tp.hero.ctaPrimary}
                     </a>
-                    <a class='inline-flex items-center px-5 py-3 rounded-3xl text-base font-medium tracking-[-0.05em] no-underline transition-[background,border-color,transform,box-shadow] duration-200 whitespace-nowrap cursor-pointer font-[inherit] animate-hero-fade-up [animation-delay:0.5s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none bg-[rgba(249,251,255,0.45)] text-brand-blue border-[1.5px] border-brand-blue backdrop-blur-[10px] backdrop-saturate-[140%] [-webkit-backdrop-filter:blur(10px)_saturate(1.4)] hover:bg-[rgba(82,119,195,0.12)] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(82,119,195,0.15)] max-sm:w-full max-sm:justify-center' href={url('cmsGuide')}>
+                    <a
+                        class='inline-flex items-center px-5 py-3 rounded-3xl text-base font-medium tracking-[-0.05em] no-underline transition-[background,border-color,transform,box-shadow] duration-200 whitespace-nowrap cursor-pointer font-[inherit] animate-hero-fade-up [animation-delay:0.5s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none bg-[rgba(249,251,255,0.45)] text-brand-blue border-[1.5px] border-brand-blue backdrop-blur-[10px] backdrop-saturate-[140%] [-webkit-backdrop-filter:blur(10px)_saturate(1.4)] hover:bg-[rgba(82,119,195,0.12)] hover:-translate-y-0.5 hover:shadow-[0_4px_16px_rgba(82,119,195,0.15)] max-sm:w-full max-sm:justify-center'
+                        href={url('cmsGuide')}
+                    >
                         {tp.hero.ctaSecondary}
                     </a>
                 </div>

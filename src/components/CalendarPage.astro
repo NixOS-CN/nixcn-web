@@ -17,21 +17,32 @@ const foodMapSrc = locale === 'en' ? '/images/calendar/food-map-en.png' : '/imag
     <Navbar locale={locale} activePage='calendar' />
 
     <!-- ======= Page Heading ======= -->
-    <section class='pt-12 pb-6 px-4 text-center flex-shrink-0 max-lg:pt-8 max-lg:pb-5 max-sm:pt-6 max-sm:px-2 max-sm:pb-4'>
-        <h1 class='text-[clamp(2.25rem,5vw,4rem)] font-semibold tracking-[-0.05em] text-brand-dark mb-4 leading-[1.1] [text-shadow:0_4px_12px_rgba(3,15,32,0.06)] animate-hero-fade-up [animation-delay:0.1s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-sm:mb-3'>
+    <section
+        class='pt-12 pb-6 px-4 text-center flex-shrink-0 max-lg:pt-8 max-lg:pb-5 max-sm:pt-6 max-sm:px-2 max-sm:pb-4'
+    >
+        <h1
+            class='text-[clamp(2.25rem,5vw,4rem)] font-semibold tracking-[-0.05em] text-brand-dark mb-4 leading-[1.1] [text-shadow:0_4px_12px_rgba(3,15,32,0.06)] animate-hero-fade-up [animation-delay:0.1s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-sm:mb-3'
+        >
             {tp.heading.title}
         </h1>
-        <p class='text-base text-brand-dark tracking-[-0.05em] m-0 leading-[1.4] animate-hero-fade-up [animation-delay:0.18s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-sm:text-sm max-sm:px-2'>
+        <p
+            class='text-base text-brand-dark tracking-[-0.05em] m-0 leading-[1.4] animate-hero-fade-up [animation-delay:0.18s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-sm:text-sm max-sm:px-2'
+        >
             {tp.heading.sub}
         </p>
     </section>
 
     <!-- ======= Bento Grid ======= -->
-    <div class='mx-auto mt-4 grid grid-cols-[32rem_1fr] grid-rows-[auto_auto] gap-[10px] max-lg:grid-cols-1 max-lg:auto-rows-auto max-sm:gap-2'>
-
+    <div
+        class='mx-auto mt-4 grid grid-cols-[32rem_1fr] grid-rows-[auto_auto] gap-[10px] max-lg:grid-cols-1 max-lg:auto-rows-auto max-sm:gap-2'
+    >
         <!-- Tile: Agenda -->
-        <div class='col-start-1 row-start-1 flex flex-col gap-4 bg-surface border-2 border-border rounded-[20px] p-6 px-7 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] shadow-[0_4px_16px_rgba(82,119,195,0.06)] animate-hero-fade-up [animation-delay:0.28s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-lg:col-auto max-lg:row-auto max-sm:rounded-2xl max-sm:p-5 max-sm:px-[18px]'>
-            <p class='text-xl font-medium tracking-[-0.05em] text-brand-dark m-0 leading-[1.4] flex items-center max-sm:text-[17px]'>
+        <div
+            class='col-start-1 row-start-1 flex flex-col gap-4 bg-surface border-2 border-border rounded-[20px] p-6 px-7 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] shadow-[0_4px_16px_rgba(82,119,195,0.06)] animate-hero-fade-up [animation-delay:0.28s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-lg:col-auto max-lg:row-auto max-sm:rounded-2xl max-sm:p-5 max-sm:px-[18px]'
+        >
+            <p
+                class='text-xl font-medium tracking-[-0.05em] text-brand-dark m-0 leading-[1.4] flex items-center max-sm:text-[17px]'
+            >
                 <span class='text-xl leading-none inline-block mr-2 align-middle'>{tp.agenda.leadEmoji}</span>
                 <span><Fragment set:html={tp.agenda.leadHtml} /></span>
             </p>
@@ -47,18 +58,34 @@ const foodMapSrc = locale === 'en' ? '/images/calendar/food-map-en.png' : '/imag
         </div>
 
         <!-- Tile: Schedule -->
-        <div class='col-start-1 row-start-2 flex flex-col gap-4 bg-surface border-2 border-border rounded-[20px] p-6 px-7 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] shadow-[0_4px_16px_rgba(82,119,195,0.06)] animate-hero-fade-up [animation-delay:0.38s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-lg:col-auto max-lg:row-auto max-sm:rounded-2xl max-sm:p-5 max-sm:px-[18px]'>
-            <p class='text-xl font-medium tracking-[-0.05em] text-brand-dark m-0 leading-[1.4] flex items-center max-sm:text-[17px]'>
+        <div
+            class='col-start-1 row-start-2 flex flex-col gap-4 bg-surface border-2 border-border rounded-[20px] p-6 px-7 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] shadow-[0_4px_16px_rgba(82,119,195,0.06)] animate-hero-fade-up [animation-delay:0.38s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-lg:col-auto max-lg:row-auto max-sm:rounded-2xl max-sm:p-5 max-sm:px-[18px]'
+        >
+            <p
+                class='text-xl font-medium tracking-[-0.05em] text-brand-dark m-0 leading-[1.4] flex items-center max-sm:text-[17px]'
+            >
                 <span class='text-xl leading-none inline-block mr-3 align-middle'>{tp.schedule.emoji}</span>
                 <span>{tp.schedule.title}</span>
             </p>
-            <div class='info-card bg-white border border-brand-blue rounded-2xl p-5 px-[22px] flex flex-col gap-[22px] shadow-[0_4px_16px_rgba(82,119,195,0.08)] max-sm:p-4 max-sm:gap-4 max-sm:rounded-[14px]'>
+            <div
+                class='info-card bg-white border border-brand-blue rounded-2xl p-5 px-[22px] flex flex-col gap-[22px] shadow-[0_4px_16px_rgba(82,119,195,0.08)] max-sm:p-4 max-sm:gap-4 max-sm:rounded-[14px]'
+            >
                 <div class='flex items-start gap-3 flex-wrap max-sm:flex-col max-sm:gap-1'>
-                    <span class='text-base text-brand-dark tracking-[-0.05em] leading-[1.6] flex-shrink-0 pt-px max-sm:text-sm'>{tp.schedule.timeLabel}</span>
-                    <span class='text-xl font-medium text-brand-dark tracking-[-0.05em] leading-[1.4] max-sm:text-base'>{tp.schedule.timeValue}</span>
+                    <span
+                        class='text-base text-brand-dark tracking-[-0.05em] leading-[1.6] flex-shrink-0 pt-px max-sm:text-sm'
+                    >
+                        {tp.schedule.timeLabel}
+                    </span>
+                    <span class='text-xl font-medium text-brand-dark tracking-[-0.05em] leading-[1.4] max-sm:text-base'>
+                        {tp.schedule.timeValue}
+                    </span>
                 </div>
                 <div class='flex items-start gap-3 flex-wrap max-sm:flex-col max-sm:gap-1'>
-                    <span class='text-base text-brand-dark tracking-[-0.05em] leading-[1.6] flex-shrink-0 pt-px max-sm:text-sm'>{tp.schedule.flowLabel}</span>
+                    <span
+                        class='text-base text-brand-dark tracking-[-0.05em] leading-[1.6] flex-shrink-0 pt-px max-sm:text-sm'
+                    >
+                        {tp.schedule.flowLabel}
+                    </span>
                     <ul class='timeline-list m-0 pl-[22px] list-disc flex flex-col gap-2'>
                         {
                             tp.schedule.flow.map((item) => (
@@ -73,13 +100,26 @@ const foodMapSrc = locale === 'en' ? '/images/calendar/food-map-en.png' : '/imag
         </div>
 
         <!-- Tile: Food Map (spans both rows) -->
-        <div id='food-block' class='col-start-2 row-[1/span_2] flex flex-col gap-4 bg-surface border-2 border-border rounded-[20px] p-6 px-7 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] shadow-[0_4px_16px_rgba(82,119,195,0.06)] scroll-mt-6 animate-hero-fade-up [animation-delay:0.34s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-lg:col-auto max-lg:row-auto max-sm:rounded-2xl max-sm:p-5 max-sm:px-[18px]'>
-            <p class='text-xl font-medium tracking-[-0.05em] text-brand-dark m-0 leading-[1.4] flex items-center max-sm:text-[17px]'>
+        <div
+            id='food-block'
+            class='col-start-2 row-[1/span_2] flex flex-col gap-4 bg-surface border-2 border-border rounded-[20px] p-6 px-7 backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] shadow-[0_4px_16px_rgba(82,119,195,0.06)] scroll-mt-6 animate-hero-fade-up [animation-delay:0.34s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-lg:col-auto max-lg:row-auto max-sm:rounded-2xl max-sm:p-5 max-sm:px-[18px]'
+        >
+            <p
+                class='text-xl font-medium tracking-[-0.05em] text-brand-dark m-0 leading-[1.4] flex items-center max-sm:text-[17px]'
+            >
                 <span class='text-xl leading-none inline-block mr-3 align-middle'>{tp.food.emoji}</span>
                 <span>{tp.food.title}</span>
             </p>
-            <figure class='food-map flex-1 m-0 min-h-40 rounded-[14px] overflow-hidden border border-[rgba(82,119,195,0.3)] bg-[#f6fafc] flex max-lg:block max-sm:rounded-xl'>
-                <img src={foodMapSrc} alt={tp.food.mapAlt} class='food-map-img block w-full object-contain object-top max-lg:h-auto' loading='lazy' decoding='async' />
+            <figure
+                class='food-map flex-1 m-0 min-h-40 rounded-[14px] overflow-hidden border border-[rgba(82,119,195,0.3)] bg-[#f6fafc] flex max-lg:block max-sm:rounded-xl'
+            >
+                <img
+                    src={foodMapSrc}
+                    alt={tp.food.mapAlt}
+                    class='food-map-img block w-full object-contain object-top max-lg:h-auto'
+                    loading='lazy'
+                    decoding='async'
+                />
             </figure>
         </div>
     </div>
