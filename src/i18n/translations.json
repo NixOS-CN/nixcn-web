@@ -1,7 +1,7 @@
 {
     "zh-CN": {
         "nav": {
-            "home": "HOME",
+            "home": "首页",
             "calendar": "活动指南",
             "cmsGuide": "CMS 系统指引",
             "souvenir": "纪念品信息",
@@ -164,7 +164,7 @@
     },
     "en": {
         "nav": {
-            "home": "HOME",
+            "home": "Home",
             "calendar": "Event Guide",
             "cmsGuide": "CMS Guide",
             "souvenir": "Souvenirs",
@@ -188,7 +188,7 @@
                 "headlineBefore": "Let your\u00a0",
                 "headlineBadge": "Nix",
                 "headlineAfter": "practice <br class=\"headline-break\" />be seen",
-                "lead": "Welcome back to the table. This is another in-person Nix / NixOS meetup for the Chinese community — richer, and more fun. We want to bring together people who are already using Nix, studying Nix, or just starting to learn about Nix. Let real practice, questions and exploration be seen onstage.",
+                "lead": "Welcome back. This is another in-person Nix / NixOS meetup for the Chinese community — richer, and more fun. We want to bring together veteran Nix users, deep divers, and absolute beginners alike. Let real-world applications, deep questions, and new explorations take center stage.",
                 "ctaPrimary": "Sign up\u00a0→",
                 "ctaSecondary": "CMS Guide\u00a0👈"
             }
@@ -201,7 +201,7 @@
             },
             "heading": {
                 "title": "Event Guide",
-                "sub": "If you are a little curious about the Conference, this page may give you a more concrete answer."
+                "sub": "If you're curious about what to expect at the Conference, this guide will give you a clearer picture."
             },
             "agenda": {
                 "leadEmoji": "🌟",
@@ -209,7 +209,7 @@
                 "bullets": [
                     "Each talk runs for about <strong>30</strong> minutes",
                     "Every talk is followed by about <strong>10</strong> minutes of discussion / Q&amp;A",
-                    "A tea break is scheduled around <strong>15:00</strong> in the afternoon"
+                    "A tea break is scheduled around <strong>15:00</strong>"
                 ]
             },
             "schedule": {
@@ -217,7 +217,7 @@
                 "title": "Conference schedule",
                 "timeLabel": "Conference dates:",
                 "timeValue": "2026/06/13 (Sat.) ~ 2026/06/14 (Sun.)",
-                "flowLabel": "Daily flow:",
+                "flowLabel": "Daily Schedule:",
                 "flow": [
                     "Check-in: 08:30 – 09:30",
                     "Talks start: 09:30",
@@ -228,7 +228,7 @@
             },
             "food": {
                 "emoji": "🍜",
-                "title": "Food guide",
+                "title": "Dining Guide",
                 "mapAlt": "NixCN Conference 2605 nearby food map, with recommended restaurants within a 2–13 minute walk from the venue"
             }
         },
@@ -252,7 +252,7 @@
                     "id": "step-01",
                     "num": "01",
                     "name": "Log in with your email",
-                    "bodyHtml": "Once you open the registration system, enter any email address that can receive mail and you will get a login link.<br />On first login the system creates an account for you automatically. Just follow the prompts to set a username and display name, and you are in.",
+                    "bodyHtml": "Once you open the registration system, enter a valid email address and you will get a login link.<br />On first login the system creates an account for you automatically. Just follow the prompts to set a username and display name, and you are in.",
                     "tip": {
                         "kind": "inline",
                         "text": "Please use an email address you check often. Future event sign-ups, identity verification, talk submissions and event notifications will all be tied to this address."
@@ -262,7 +262,7 @@
                     "id": "step-02",
                     "num": "02",
                     "name": "Browse upcoming events",
-                    "bodyHtml": "Once logged in, you can browse currently open events on the Events page.<br />Select an event to open its detail page, where you can see the date, venue, description, registration status and the action entries you need.<br />Here you can:",
+                    "bodyHtml": "Once logged in, you can browse currently open events on the Events page.<br />Select an event to open its detail page, where you can see the date, venue, description, registration status and available actions.<br />Here you can:",
                     "list": ["Join the event", "View event details", "Submit a talk", "View events you have joined"]
                 },
                 {
@@ -292,7 +292,7 @@
                     "num": "05",
                     "name": "Talk review and scheduling",
                     "bodyHtmls": [
-                        "Submitted talks are reviewed by the organizers as a whole.<br />We curate the program based on topic relevance, content completeness, sharing value and the overall conference plan. Accepted talks then move into the scheduling phase.",
+                        "Submitted talks are reviewed collectively by the organizers.<br />We curate the program based on topic relevance, content completeness, sharing value and the overall conference plan. Accepted talks then move into the scheduling phase.",
                         "The final program is expected to be announced two weeks before the conference.<br />Please refer to the latest information on the website or event page closer to the date."
                     ]
                 },
@@ -300,7 +300,7 @@
                     "id": "step-06",
                     "num": "06",
                     "name": "Entry code and check-in code",
-                    "bodyHtml": "Once the event starts, the system will generate an entry code and a check-in code for every attendee who has joined.<br />These codes are your essential credentials on-site. Once you arrive at the venue, please present them at the matching step under staff guidance."
+                    "bodyHtml": "Once the event starts, the system will generate an entry code and a check-in code for every attendee who has joined.<br />These codes are your essential credentials on-site. Once you arrive at the venue, please present them at the respective checkpoints step under staff guidance."
                 }
             ]
         },
