@@ -1,0 +1,7 @@
+:3000 {
+    root * /srv
+    file_server
+
+    @root path /
+    redir @root /zh-CN/ 302
+}

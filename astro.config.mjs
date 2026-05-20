@@ -7,14 +7,12 @@ export default defineConfig({
     site: 'https://meetup.nixos-cn.org',
     vite: {
         plugins: [tailwindcss()],
-        preview: {
-            allowedHosts: ['test.nix.org.cn', 'nix.org.cn'],
-        },
     },
     server: {
         host: true,
     },
-    redirects: {
-        '/': '/zh-CN/',
+    i18n: {
+        locales: ['zh-CN', 'en'],
+        defaultLocale: 'zh-CN',
     },
 });
