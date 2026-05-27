@@ -63,66 +63,16 @@ const ts = tp.comingSoon;
                 <p
                     class='text-[15px] leading-[1.8] text-[#1a2332] m-0 tracking-[-0.01em] max-w-[560px] animate-hero-fade-up [animation-delay:0.4s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-sm:text-sm max-sm:leading-[1.75]'
                 >
-                    {tp.card.body}
+                    {tp.card.body}devenv
                 </p>
                 <!-- hover:bg-[#4269b8] hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(82,119,195,0.35)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-blue focus-visible:outline-offset-[3px] -->
                 <button
                     type='button'
-                    class='inline-flex items-center gap-[10px] self-start py-[18px] px-8 border-none rounded-[36px] bg-gray-400 text-white text-base font-medium font-[inherit] tracking-[-0.05em] cursor-pointer transition-[background,transform,box-shadow] duration-200 whitespace-nowrap animate-hero-fade-up [animation-delay:0.48s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-sm:w-full max-sm:justify-center max-sm:py-4 max-sm:px-6'
-                    id='souvenir-cta-btn'
-                    aria-haspopup='dialog'
-                >
-                    {tp.card.cta}
+                    class='inline-flex items-center gap-[10px] self-start py-[18px] px-8 border-none rounded-[36px] bg-brand-blue text-white text-base font-medium font-[inherit] tracking-[-0.05em] cursor-pointer transition-[background,transform,box-shadow] duration-200 whitespace-nowrap animate-hero-fade-up [animation-delay:0.48s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-sm:w-full max-sm:justify-center max-sm:py-4 max-sm:px-6'
+                    >
+                    <a class="decoration-none" href={tp.card.ctaUrl}>{tp.card.cta}</a>
                 </button>
             </div>
         </section>
     </main>
 </BaseLayout>
-
-<script>
-    function initComingSoonModal() {
-        const overlay = document.getElementById('coming-soon-overlay');
-        const openBtn = document.getElementById('souvenir-cta-btn');
-        const closeBtn = document.getElementById('coming-soon-close');
-        const backdrop = document.getElementById('coming-soon-backdrop');
-
-        if (!overlay || !openBtn || !closeBtn || !backdrop || overlay.dataset.init === 'true') {
-            return;
-        }
-
-        overlay.dataset.init = 'true';
-
-        let lastFocused: HTMLElement | null = null;
-
-        const openModal = () => {
-            lastFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
-            overlay.hidden = false;
-            overlay.setAttribute('aria-hidden', 'false');
-            overlay.classList.add('is-open');
-            document.body.style.overflow = 'hidden';
-            closeBtn.focus();
-        };
-
-        const closeModal = () => {
-            overlay.classList.remove('is-open');
-            overlay.hidden = true;
-            overlay.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = '';
-            lastFocused?.focus();
-            lastFocused = null;
-        };
-
-        openBtn.addEventListener('click', openModal);
-        closeBtn.addEventListener('click', closeModal);
-        backdrop.addEventListener('click', closeModal);
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && !overlay.hidden) {
-                closeModal();
-            }
-        });
-    }
-
-    initComingSoonModal();
-    document.addEventListener('astro:page-load', initComingSoonModal);
-</script>
