@@ -43,6 +43,16 @@ const switchHref = url(otherLocale, activePage);
             {t.nav.eventGuide}
         </a>
         <a
+            href={url(locale, 'agenda')}
+            class:list={[
+                'nav-link text-sm font-medium text-[#a7b8d0] no-underline tracking-[-0.05em] whitespace-nowrap transition-colors duration-200 relative pb-0.5 hover:text-brand-blue',
+                activePage === 'agenda' && 'active text-brand-blue',
+            ]}
+            aria-current={activePage === 'agenda' ? 'page' : undefined}
+        >
+            {t.nav.agenda}
+        </a>
+        <a
             href={url(locale, 'cmsGuide')}
             class:list={[
                 'nav-link text-sm font-medium text-[#a7b8d0] no-underline tracking-[-0.05em] whitespace-nowrap transition-colors duration-200 relative pb-0.5 hover:text-brand-blue',
@@ -143,6 +153,13 @@ const switchHref = url(otherLocale, activePage);
                 class='text-[15px] font-medium text-brand-blue no-underline py-2.5 border-b border-[rgba(155,206,241,0.3)] transition-opacity duration-150 hover:opacity-70 last:border-b-0'
             >
                 {t.nav.eventGuide}
+            </a>
+            <a
+                href={url(locale, 'agenda')}
+                aria-current={activePage === 'agenda' ? 'page' : undefined}
+                class='text-[15px] font-medium text-brand-blue no-underline py-2.5 border-b border-[rgba(155,206,241,0.3)] transition-opacity duration-150 hover:opacity-70 last:border-b-0'
+            >
+                {t.nav.agenda}
             </a>
             <a
                 href={url(locale, 'cmsGuide')}

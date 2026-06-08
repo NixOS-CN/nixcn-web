@@ -3,6 +3,7 @@
     "nav": {
       "home": "首页",
       "eventGuide": "活动指南",
+      "agenda": "议程",
       "cmsGuide": "CMS 系统指引",
       "souvenir": "纪念品信息",
       "ariaLogoHome": "NixCN 首页",
@@ -301,6 +302,7 @@
     "nav": {
       "home": "Home",
       "eventGuide": "Event Guide",
+      "agenda": "Agenda",
       "cmsGuide": "CMS Guide",
       "souvenir": "Souvenirs",
       "ariaLogoHome": "NixCN Home",
