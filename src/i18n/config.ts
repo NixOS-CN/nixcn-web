@@ -17,6 +17,7 @@ export const PAGE_SLUGS = {
     eventGuide: 'event-guide',
     cmsGuide: 'cms-guide',
     souvenir: 'souvenir',
+    agenda: 'agenda',
 } as const;
 
 export type PageSlug = keyof typeof PAGE_SLUGS;
