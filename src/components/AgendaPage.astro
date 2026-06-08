@@ -80,6 +80,7 @@ const tp = t.agenda;
                     id={`day-panel-${dayIndex}`}
                     role='tabpanel'
                     aria-labelledby={`day-tab-${dayIndex}`}
+                    tabindex={dayIndex === 0 ? 0 : -1}
                     class:list={[
                         'day-panel rounded-3xl border-2 border-border overflow-hidden bg-surface backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] shadow-[0_4px_16px_rgba(82,119,195,0.06)] animate-hero-fade-up [animation-delay:0.28s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none',
                         dayIndex !== 0 && 'hidden',
@@ -146,11 +147,15 @@ const tp = t.agenda;
                 t.classList.toggle('bg-white', !isActive);
                 t.classList.toggle('text-[#a7b8d0]', !isActive);
                 t.classList.toggle('border-border', !isActive);
+                t.classList.toggle('hover:border-brand-light', !isActive);
+                t.classList.toggle('hover:text-brand-blue', !isActive);
                 t.setAttribute('aria-selected', isActive ? 'true' : 'false');
                 t.setAttribute('tabindex', isActive ? '0' : '-1');
             });
             panels.forEach((p, j) => {
-                p.classList.toggle('hidden', j !== index);
+                const isPanelActive = j === index;
+                p.classList.toggle('hidden', !isPanelActive);
+                p.setAttribute('tabindex', isPanelActive ? '0' : '-1');
             });
         }
 
