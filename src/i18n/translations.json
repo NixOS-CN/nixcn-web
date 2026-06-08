@@ -170,6 +170,130 @@
         "close": "知道了",
         "ariaClose": "关闭弹窗"
       }
+    },
+    "agenda": {
+      "meta": {
+        "htmlLang": "zh-CN",
+        "title": "议程 · NixCN Conference 2605",
+        "description": "NixCN Conference 2605 议程 — 完整的两日会议日程，包含分享议题、演讲者与时间安排。"
+      },
+      "hero": {
+        "title": "议程",
+        "sub": "NixCN Conference 2605 完整日程。"
+      },
+      "days": [
+        {
+          "label": "Day 1 · 06/13 (Sat.)",
+          "talks": [
+            {
+              "timeStart": "10:00",
+              "timeEnd": "11:45",
+              "title": "Nix / NixOS 入门",
+              "speaker": "Prince213",
+              "description": "TBA"
+            },
+            {
+              "timeStart": "11:45",
+              "timeEnd": "12:00",
+              "title": "PGP签名派对",
+              "speaker": "Cryolitia",
+              "description": "一年一度的签名派对环节，来和大家交换PGP签名吧！介绍什么是OpenPGP，以及怎么和你身边的人互相签名。"
+            },
+            {
+              "type": "break",
+              "timeStart": "12:00",
+              "timeEnd": "14:00",
+              "title": "🍜 午休"
+            },
+            {
+              "timeStart": "14:00",
+              "timeEnd": "14:40",
+              "title": "Flakes 稳定化的漫漫长路",
+              "speaker": "pluie",
+              "description": "作为 Nix 生态当中最有名的「预览功能」（experimental feature），Flakes 已经被大量的 Nix 用户以及一些第三方软件（如 Determinate Nix 安装器）视为 Nix 使用体验中不可或缺的一环。那么，它究竟是为什么到现在仍然没有成为原版 Nix 开箱即用的部分呢？在轻松管理第三方库版本、组织系统配置和软件包定义等种种优势背后，都有哪些技术问题使其迟迟不能够摆脱「不稳定性」？"
+            },
+            {
+              "timeStart": "14:50",
+              "timeEnd": "15:20",
+              "title": "Why NixOS is the Best Distro to Grow a New OS Kernel",
+              "speaker": "田洪亮",
+              "description": "Linux has been the most successful open-source OS kernel for the last 30 years. So why build a brand-new, general-purpose OS kernel in 2020s — and why raise it on NixOS?<br>This talk tells the story of Asterinas, a Linux-compatible OS kernel written from scratch in Rust, and Asterinas NixOS, its first distribution. It answers two questions. First, why a new kernel at all? Everyone now agrees the kernel's future is Rust — the real question is how. Linux takes the incremental path (Rust for Linux); Asterinas takes the clean-slate path, using a novel framekernel architecture that confines unsafe Rust to a tiny, auditable core while keeping the rest of the kernel in safe Rust. The result is the speed of a monolithic kernel and the security of a microkernel. Second, why grow it on NixOS? Because nearly every hard problem a half-finished kernel creates has a one-paragraph answer in Nix: declarative overlays patch around an incomplete ABI without forking nixpkgs; a ~20-line Nix expression bakes our kernel into a stock NixOS installer; nixpkgs itself becomes the largest real-world conformance suite we could ask for.<br>You'll leave knowing what a framekernel is, how Asterinas differs from Linux, and why NixOS may be the best incubator for any new Linux-compatible kernel. No kernel background required."
+            },
+            {
+              "type": "break",
+              "timeStart": "15:30",
+              "timeEnd": "16:00",
+              "title": "☕ 茶歇"
+            },
+            {
+              "timeStart": "16:00",
+              "timeEnd": "17:10",
+              "title": "给 Nix 用户的 lambda 演算基础",
+              "speaker": "Yinfeng",
+              "description": "Nix 与 lambda 演算的关系<br>Lambda 演算是啥<br>Lambda 演算的语法<br>Lambda 演算的语义<br>语法糖（derived form）<br>柯里化<br>抽象，church encoding<br>扩展<br>Evaluation order<br>Call by value/name, normal form<br>Call by need, weak head normal form<br>不动点<br>let &amp; rec &amp; lib.fix<br>Overlay &amp; NixOS modules<br>不动点组合子<br>实现方法"
+            },
+            {
+              "timeStart": "17:20",
+              "timeEnd": "17:55",
+              "title": "Nix 下搭建 Machine Learning 环境",
+              "speaker": "MoeLeak",
+              "description": "在 NixOS 上无法常规使用 miniconda 等管理器，只用 nix 管理的话很难复现旧论文中的 py 包，介绍一下我是如何在NixOS 或非 NixOS 系统上使用 Nix 搭建 ML 环境的。"
+            }
+          ]
+        },
+        {
+          "label": "Day 2 · 06/14 (Sun.)",
+          "talks": [
+            {
+              "timeStart": "10:00",
+              "timeEnd": "12:00",
+              "title": "Flake展示 & NixOS设备展示交流",
+              "speaker": "Noa Virellia",
+              "description": "分享自己的Flake结构和设备配置"
+            },
+            {
+              "type": "break",
+              "timeStart": "12:00",
+              "timeEnd": "14:00",
+              "title": "🍜 午休"
+            },
+            {
+              "timeStart": "14:00",
+              "timeEnd": "14:30",
+              "title": "小内存机器的自动更新",
+              "speaker": "Xinyang Li",
+              "description": "system.autoUpgrade 需要在本机Eval和Build，在内存有限的机器上往往无法正常更新。colmena、deploy-rs等常用的deploy工具通常需要本地Eval后，把结果拷贝到远端机器上。这种Push模式很难与CI结合，大多数情况下需要人工参与，部署速度也受制于单台机器的网络质量。Comin可以看作autoUpgrade的升级版，它采用 GitOps 思路，让每台机器主动轮询配置仓库，按主机名匹配到对应的 NixOS 配置后自主完成部署。更关键的是，它可以把 Eval 和 Build 解耦，让机器复用 CI 的 Eval 和 Build 结果，仅拉取system closure即可完成更新。"
+            },
+            {
+              "timeStart": "14:40",
+              "timeEnd": "15:20",
+              "title": "RISC-V+NixOS=电子胸牌？",
+              "speaker": "Cryolitia",
+              "description": "从Milk-V Duo Module 01开始做一个电子胸牌？我们Nix的会议一定要有自己做的powered by NixOS的谷子！"
+            },
+            {
+              "type": "break",
+              "timeStart": "15:30",
+              "timeEnd": "16:00",
+              "title": "☕ 茶歇"
+            },
+            {
+              "timeStart": "16:00",
+              "timeEnd": "16:40",
+              "title": "使用NixOS的路由器、NAS与Kubernetes集群",
+              "speaker": "ChaosAttractor",
+              "description": "使用NixOS配置路由器、NAS与Kubernetes集群的优势，能力与问题以及如何在大批量部署中利用Nix的优势"
+            },
+            {
+              "timeStart": "16:50",
+              "timeEnd": "17:30",
+              "title": "土制 Nix S3 Binary Cache",
+              "speaker": "Yinfeng",
+              "description": "分享一下之前我的一篇博客的内容：https://blog.linyinfeng.com/posts/homemade-nix-s3-cache/"
+            }
+          ]
+        }
+      ]
     }
   },
   "en": {
@@ -344,6 +468,130 @@
         "close": "Got it",
         "ariaClose": "Close dialog"
       }
+    },
+    "agenda": {
+      "meta": {
+        "htmlLang": "en",
+        "title": "Agenda · NixCN Conference 2605",
+        "description": "NixCN Conference 2605 Agenda — the full two-day program with talks, speakers, and times."
+      },
+      "hero": {
+        "title": "Agenda",
+        "sub": "Full program for NixCN Conference 2605."
+      },
+      "days": [
+        {
+          "label": "Day 1 · 06/13 (Sat.)",
+          "talks": [
+            {
+              "timeStart": "10:00",
+              "timeEnd": "11:45",
+              "title": "Nix / NixOS 入门",
+              "speaker": "Prince213",
+              "description": "TBA"
+            },
+            {
+              "timeStart": "11:45",
+              "timeEnd": "12:00",
+              "title": "PGP签名派对",
+              "speaker": "Cryolitia",
+              "description": "一年一度的签名派对环节，来和大家交换PGP签名吧！介绍什么是OpenPGP，以及怎么和你身边的人互相签名。"
+            },
+            {
+              "type": "break",
+              "timeStart": "12:00",
+              "timeEnd": "14:00",
+              "title": "🍜 Lunch Break"
+            },
+            {
+              "timeStart": "14:00",
+              "timeEnd": "14:40",
+              "title": "Flakes 稳定化的漫漫长路",
+              "speaker": "pluie",
+              "description": "作为 Nix 生态当中最有名的「预览功能」（experimental feature），Flakes 已经被大量的 Nix 用户以及一些第三方软件（如 Determinate Nix 安装器）视为 Nix 使用体验中不可或缺的一环。那么，它究竟是为什么到现在仍然没有成为原版 Nix 开箱即用的部分呢？在轻松管理第三方库版本、组织系统配置和软件包定义等种种优势背后，都有哪些技术问题使其迟迟不能够摆脱「不稳定性」？"
+            },
+            {
+              "timeStart": "14:50",
+              "timeEnd": "15:20",
+              "title": "Why NixOS is the Best Distro to Grow a New OS Kernel",
+              "speaker": "田洪亮",
+              "description": "Linux has been the most successful open-source OS kernel for the last 30 years. So why build a brand-new, general-purpose OS kernel in 2020s — and why raise it on NixOS?<br>This talk tells the story of Asterinas, a Linux-compatible OS kernel written from scratch in Rust, and Asterinas NixOS, its first distribution. It answers two questions. First, why a new kernel at all? Everyone now agrees the kernel's future is Rust — the real question is how. Linux takes the incremental path (Rust for Linux); Asterinas takes the clean-slate path, using a novel framekernel architecture that confines unsafe Rust to a tiny, auditable core while keeping the rest of the kernel in safe Rust. The result is the speed of a monolithic kernel and the security of a microkernel. Second, why grow it on NixOS? Because nearly every hard problem a half-finished kernel creates has a one-paragraph answer in Nix: declarative overlays patch around an incomplete ABI without forking nixpkgs; a ~20-line Nix expression bakes our kernel into a stock NixOS installer; nixpkgs itself becomes the largest real-world conformance suite we could ask for.<br>You'll leave knowing what a framekernel is, how Asterinas differs from Linux, and why NixOS may be the best incubator for any new Linux-compatible kernel. No kernel background required."
+            },
+            {
+              "type": "break",
+              "timeStart": "15:30",
+              "timeEnd": "16:00",
+              "title": "☕ Tea Break"
+            },
+            {
+              "timeStart": "16:00",
+              "timeEnd": "17:10",
+              "title": "给 Nix 用户的 lambda 演算基础",
+              "speaker": "Yinfeng",
+              "description": "Nix 与 lambda 演算的关系<br>Lambda 演算是啥<br>Lambda 演算的语法<br>Lambda 演算的语义<br>语法糖（derived form）<br>柯里化<br>抽象，church encoding<br>扩展<br>Evaluation order<br>Call by value/name, normal form<br>Call by need, weak head normal form<br>不动点<br>let &amp; rec &amp; lib.fix<br>Overlay &amp; NixOS modules<br>不动点组合子<br>实现方法"
+            },
+            {
+              "timeStart": "17:20",
+              "timeEnd": "17:55",
+              "title": "Nix 下搭建 Machine Learning 环境",
+              "speaker": "MoeLeak",
+              "description": "在 NixOS 上无法常规使用 miniconda 等管理器，只用 nix 管理的话很难复现旧论文中的 py 包，介绍一下我是如何在NixOS 或非 NixOS 系统上使用 Nix 搭建 ML 环境的。"
+            }
+          ]
+        },
+        {
+          "label": "Day 2 · 06/14 (Sun.)",
+          "talks": [
+            {
+              "timeStart": "10:00",
+              "timeEnd": "12:00",
+              "title": "Flake展示 & NixOS设备展示交流",
+              "speaker": "Noa Virellia",
+              "description": "分享自己的Flake结构和设备配置"
+            },
+            {
+              "type": "break",
+              "timeStart": "12:00",
+              "timeEnd": "14:00",
+              "title": "🍜 Lunch Break"
+            },
+            {
+              "timeStart": "14:00",
+              "timeEnd": "14:30",
+              "title": "小内存机器的自动更新",
+              "speaker": "Xinyang Li",
+              "description": "system.autoUpgrade 需要在本机Eval和Build，在内存有限的机器上往往无法正常更新。colmena、deploy-rs等常用的deploy工具通常需要本地Eval后，把结果拷贝到远端机器上。这种Push模式很难与CI结合，大多数情况下需要人工参与，部署速度也受制于单台机器的网络质量。Comin可以看作autoUpgrade的升级版，它采用 GitOps 思路，让每台机器主动轮询配置仓库，按主机名匹配到对应的 NixOS 配置后自主完成部署。更关键的是，它可以把 Eval 和 Build 解耦，让机器复用 CI 的 Eval 和 Build 结果，仅拉取system closure即可完成更新。"
+            },
+            {
+              "timeStart": "14:40",
+              "timeEnd": "15:20",
+              "title": "RISC-V+NixOS=电子胸牌？",
+              "speaker": "Cryolitia",
+              "description": "从Milk-V Duo Module 01开始做一个电子胸牌？我们Nix的会议一定要有自己做的powered by NixOS的谷子！"
+            },
+            {
+              "type": "break",
+              "timeStart": "15:30",
+              "timeEnd": "16:00",
+              "title": "☕ Tea Break"
+            },
+            {
+              "timeStart": "16:00",
+              "timeEnd": "16:40",
+              "title": "使用NixOS的路由器、NAS与Kubernetes集群",
+              "speaker": "ChaosAttractor",
+              "description": "使用NixOS配置路由器、NAS与Kubernetes集群的优势，能力与问题以及如何在大批量部署中利用Nix的优势"
+            },
+            {
+              "timeStart": "16:50",
+              "timeEnd": "17:30",
+              "title": "土制 Nix S3 Binary Cache",
+              "speaker": "Yinfeng",
+              "description": "分享一下之前我的一篇博客的内容：https://blog.linyinfeng.com/posts/homemade-nix-s3-cache/"
+            }
+          ]
+        }
+      ]
     }
   }
 }
