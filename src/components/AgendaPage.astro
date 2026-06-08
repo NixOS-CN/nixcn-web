@@ -50,6 +50,7 @@ const tp = t.agenda;
         <div
             class='flex gap-2 mb-5 animate-hero-fade-up [animation-delay:0.22s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none'
             role='tablist'
+            aria-label={tp.tabsAriaLabel}
         >
             {
                 tp.days.map((day, i) => (
@@ -136,19 +137,38 @@ const tp = t.agenda;
         const tabs = document.querySelectorAll<HTMLButtonElement>('.day-tab');
         const panels = document.querySelectorAll<HTMLElement>('.day-panel');
 
+        function activateTab(index: number) {
+            tabs.forEach((t, j) => {
+                const isActive = j === index;
+                t.classList.toggle('bg-brand-blue', isActive);
+                t.classList.toggle('text-white', isActive);
+                t.classList.toggle('border-brand-blue', isActive);
+                t.classList.toggle('bg-white', !isActive);
+                t.classList.toggle('text-[#a7b8d0]', !isActive);
+                t.classList.toggle('border-border', !isActive);
+                t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                t.setAttribute('tabindex', isActive ? '0' : '-1');
+            });
+            panels.forEach((p, j) => {
+                p.classList.toggle('hidden', j !== index);
+            });
+        }
+
         tabs.forEach((tab, i) => {
-            tab.addEventListener('click', () => {
-                tabs.forEach((t) => {
-                    t.classList.remove('bg-brand-blue', 'text-white', 'border-brand-blue');
-                    t.classList.add('bg-white', 'text-[#a7b8d0]', 'border-border');
-                    t.setAttribute('aria-selected', 'false');
-                });
-                tab.classList.remove('bg-white', 'text-[#a7b8d0]', 'border-border');
-                tab.classList.add('bg-brand-blue', 'text-white', 'border-brand-blue');
-                tab.setAttribute('aria-selected', 'true');
-                panels.forEach((p, j) => {
-                    p.classList.toggle('hidden', j !== i);
-                });
+            tab.setAttribute('tabindex', i === 0 ? '0' : '-1');
+            tab.addEventListener('click', () => activateTab(i));
+            tab.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    e.preventDefault();
+                    const next = (i + 1) % tabs.length;
+                    activateTab(next);
+                    tabs[next].focus();
+                } else if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    const prev = (i - 1 + tabs.length) % tabs.length;
+                    activateTab(prev);
+                    tabs[prev].focus();
+                }
             });
         });
     </script>

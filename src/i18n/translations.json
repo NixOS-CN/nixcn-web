@@ -181,6 +181,7 @@
         "title": "议程",
         "sub": "NixCN Conference 2605 完整日程。"
       },
+      "tabsAriaLabel": "按天查看议程",
       "days": [
         {
           "label": "Day 1 · 06/13 (Sat.)",
@@ -479,6 +480,7 @@
         "title": "Agenda",
         "sub": "Full program for NixCN Conference 2605."
       },
+      "tabsAriaLabel": "Conference days",
       "days": [
         {
           "label": "Day 1 · 06/13 (Sat.)",
