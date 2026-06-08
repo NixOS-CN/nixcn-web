@@ -48,3 +48,6 @@ devenv.local.yaml
 # wrangler files
 .wrangler
 .dev.vars
+
+# superpowers brainstorm artefacts
+.superpowers/
