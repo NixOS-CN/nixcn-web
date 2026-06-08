@@ -1,29 +1,35 @@
 {
-    "plugins": ["prettier-plugin-astro"],
-    "overrides": [
-        {
-            "files": "*.astro",
-            "options": {
-                "parser": "astro"
-            }
-        }
-    ],
-    "printWidth": 120,
-    "tabWidth": 4,
-    "useTabs": false,
-    "semi": true,
-    "singleQuote": true,
-    "quoteProps": "as-needed",
-    "jsxSingleQuote": true,
-    "trailingComma": "all",
-    "bracketSpacing": true,
-    "objectWrap": "preserve",
-    "bracketSameLine": false,
-    "arrowParens": "always",
-    "proseWrap": "preserve",
-    "htmlWhitespaceSensitivity": "ignore",
-    "vueIndentScriptAndStyle": false,
-    "endOfLine": "lf",
-    "embeddedLanguageFormatting": "auto",
-    "singleAttributePerLine": false
+  "plugins": ["prettier-plugin-astro"],
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    },
+    {
+      "files": "*.json",
+      "options": {
+        "tabWidth": 2
+      }
+    }
+  ],
+  "printWidth": 120,
+  "tabWidth": 4,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "jsxSingleQuote": true,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "objectWrap": "preserve",
+  "bracketSameLine": false,
+  "arrowParens": "always",
+  "proseWrap": "preserve",
+  "htmlWhitespaceSensitivity": "ignore",
+  "vueIndentScriptAndStyle": false,
+  "endOfLine": "lf",
+  "embeddedLanguageFormatting": "auto",
+  "singleAttributePerLine": false
 }

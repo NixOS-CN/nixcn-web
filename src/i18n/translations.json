@@ -78,9 +78,7 @@
       },
       "hero": {
         "title": "CMS 系统指引",
-        "subs": [
-          "通过报名系统完成活动报名、身份认证、议程提交以及入场签到等操作。"
-        ]
+        "subs": ["通过报名系统完成活动报名、身份认证、议程提交以及入场签到等操作。"]
       },
       "tipBell": "🔔",
       "tipLabel": "提示：",
@@ -100,12 +98,7 @@
           "num": "02",
           "name": "查看近期活动",
           "bodyHtml": "登录后，你可以在「活动列表」中查看当前开放的会议活动。<br />选择对应活动后，可以进入活动详情页，查看会议时间、地点、活动说明、报名状态与相关操作入口。<br />你可以在这里完成：",
-          "list": [
-            "加入活动",
-            "查看活动详情",
-            "提交议程",
-            "查看已加入的活动"
-          ]
+          "list": ["加入活动", "查看活动详情", "提交议程", "查看已加入的活动"]
         },
         {
           "id": "step-03",
@@ -116,10 +109,7 @@
             "身份认证用于确认参会者身份，保障现场入场、签到和会务管理的准确性。认证信息仅用于本次活动身份核验，我们会妥善保护你的个人信息安全，你填写的身份信息会在 30 天内销毁。",
             "你可以选择以下方式完成认证："
           ],
-          "list": [
-            "身份证认证",
-            "护照认证"
-          ],
+          "list": ["身份证认证", "护照认证"],
           "afterListHtml": "完成认证后，即可继续参与活动相关操作。",
           "tip": {
             "kind": "inline",
@@ -192,7 +182,7 @@
               "timeEnd": "11:45",
               "title": "Nix / NixOS 入门",
               "speaker": "Prince213",
-              "description": "TBA"
+              "description": "开场 + NixOS 入门介绍"
             },
             {
               "timeStart": "11:45",
@@ -400,12 +390,7 @@
           "num": "02",
           "name": "Browse upcoming events",
           "bodyHtml": "Once logged in, you can browse currently open events on the Events page.<br />Select an event to open its detail page, where you can see the date, venue, description, registration status and available actions.<br />Here you can:",
-          "list": [
-            "Join the event",
-            "View event details",
-            "Submit a talk",
-            "View events you have joined"
-          ]
+          "list": ["Join the event", "View event details", "Submit a talk", "View events you have joined"]
         },
         {
           "id": "step-03",
@@ -416,10 +401,7 @@
             "Identity verification is used to confirm attendee identity and to ensure accurate on-site entry, check-in and event management. The information is used only for verifying your identity for this event. We take care to protect your personal information, and the identity data you submit will be destroyed within 30 days.",
             "You can verify your identity using either of the following:"
           ],
-          "list": [
-            "National ID card verification",
-            "Passport verification"
-          ],
+          "list": ["National ID card verification", "Passport verification"],
           "afterListHtml": "Once verified, you can continue with the rest of the event actions.",
           "tip": {
             "kind": "inline",
@@ -492,7 +474,7 @@
               "timeEnd": "11:45",
               "title": "Nix / NixOS 入门",
               "speaker": "Prince213",
-              "description": "TBA"
+              "description": "开场 + NixOS 入门介绍"
             },
             {
               "timeStart": "11:45",
