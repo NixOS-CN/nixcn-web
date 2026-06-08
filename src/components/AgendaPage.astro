@@ -1,0 +1,155 @@
+---
+import Navbar from './Navbar.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { type Locale, getTranslations } from '../i18n/config';
+
+interface Props {
+    locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = getTranslations(locale);
+const tp = t.agenda;
+---
+
+<BaseLayout title={tp.meta.title} description={tp.meta.description} lang={tp.meta.htmlLang}>
+    <Navbar locale={locale} activePage='agenda' />
+
+    <!-- ======= Hero Banner ======= -->
+    <section
+        class='relative pt-[38px] pb-12 px-6 text-center isolate overflow-hidden min-h-[215px] max-lg:pt-8 max-lg:pb-10 max-lg:px-5 max-sm:pt-6 max-sm:pb-8 max-sm:px-4'
+        aria-labelledby='agenda-title'
+    >
+        <div class='absolute inset-0 z-0 pointer-events-none overflow-hidden' aria-hidden='true'>
+            <img
+                class='absolute inset-0 w-full h-full object-cover object-top block animate-hero-fade-in motion-reduce:animate-none motion-reduce:opacity-100'
+                src='/images/shared/hero-bg.png'
+                alt=''
+            />
+        </div>
+        <div class='relative z-[1] max-w-[720px] mx-auto'>
+            <h1
+                id='agenda-title'
+                class='text-[clamp(2.5rem,5.5vw,4.5rem)] font-semibold text-brand-dark m-0 mb-4 tracking-[-0.05em] leading-[1.1] [text-shadow:0_4px_14px_rgba(3,15,32,0.08)] animate-hero-fade-up [animation-delay:0.1s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-sm:mb-3'
+            >
+                {tp.hero.title}
+            </h1>
+            <p
+                class='text-[clamp(0.875rem,1vw,1rem)] text-[#1a2332] m-0 leading-[1.7] tracking-[-0.02em] max-w-[640px] mx-auto animate-hero-fade-up [animation-delay:0.18s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none max-sm:text-[13px] max-sm:leading-[1.65]'
+            >
+                {tp.hero.sub}
+            </p>
+        </div>
+    </section>
+
+    <!-- ======= Agenda Content ======= -->
+    <main
+        class='relative z-[2] w-full max-w-[1152px] mx-auto px-10 pt-4 pb-[120px] max-lg:px-7 max-lg:pt-3 max-lg:pb-[100px] max-sm:px-[18px] max-sm:pt-2 max-sm:pb-20'
+    >
+        <!-- Day Tabs -->
+        <div
+            class='flex gap-2 mb-5 animate-hero-fade-up [animation-delay:0.22s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none'
+            role='tablist'
+        >
+            {
+                tp.days.map((day, i) => (
+                    <button
+                        type='button'
+                        role='tab'
+                        aria-selected={i === 0 ? 'true' : 'false'}
+                        aria-controls={`day-panel-${i}`}
+                        id={`day-tab-${i}`}
+                        class:list={[
+                            'day-tab px-5 py-2 rounded-[20px] text-sm font-semibold tracking-[-0.03em] border-2 cursor-pointer font-[inherit] transition-colors duration-200 whitespace-nowrap',
+                            i === 0
+                                ? 'bg-brand-blue text-white border-brand-blue'
+                                : 'bg-white text-[#a7b8d0] border-border hover:border-brand-light hover:text-brand-blue',
+                        ]}
+                    >
+                        {day.label}
+                    </button>
+                ))
+            }
+        </div>
+
+        <!-- Day Panels -->
+        {
+            tp.days.map((day, dayIndex) => (
+                <div
+                    id={`day-panel-${dayIndex}`}
+                    role='tabpanel'
+                    aria-labelledby={`day-tab-${dayIndex}`}
+                    class:list={[
+                        'day-panel rounded-3xl border-2 border-border overflow-hidden bg-surface backdrop-blur-sm [-webkit-backdrop-filter:blur(4px)] shadow-[0_4px_16px_rgba(82,119,195,0.06)] animate-hero-fade-up [animation-delay:0.28s] motion-reduce:animate-none motion-reduce:opacity-100 motion-reduce:transform-none',
+                        dayIndex !== 0 && 'hidden',
+                    ]}
+                >
+                    <ul class='list-none m-0 p-0 divide-y divide-[rgba(155,206,241,0.3)]'>
+                        {day.talks.map((talk) =>
+                            'type' in talk && talk.type === 'break' ? (
+                                <li class='flex gap-4 px-6 py-3 bg-[rgba(82,119,195,0.04)] max-sm:px-4 max-sm:py-2.5'>
+                                    <div class='w-[52px] flex-shrink-0 text-right'>
+                                        <div class='text-xs font-medium text-[#a7b8d0] leading-snug'>
+                                            {talk.timeStart}
+                                        </div>
+                                        <div class='text-xs text-[#a7b8d0] leading-snug'>–{talk.timeEnd}</div>
+                                    </div>
+                                    <div
+                                        class='w-px flex-shrink-0 self-stretch bg-[rgba(155,206,241,0.4)]'
+                                        aria-hidden='true'
+                                    />
+                                    <div class='text-sm italic text-[#a7b8d0] self-center'>{talk.title}</div>
+                                </li>
+                            ) : (
+                                <li class='flex gap-4 px-6 py-5 max-sm:px-4 max-sm:py-4'>
+                                    <div class='w-[52px] flex-shrink-0 text-right pt-px'>
+                                        <div class='text-sm font-bold text-brand-blue leading-snug'>
+                                            {talk.timeStart}
+                                        </div>
+                                        <div class='text-xs text-[#a7b8d0] leading-snug mt-0.5'>–{talk.timeEnd}</div>
+                                    </div>
+                                    <div
+                                        class='w-px flex-shrink-0 self-stretch bg-[rgba(155,206,241,0.5)]'
+                                        aria-hidden='true'
+                                    />
+                                    <div class='flex-1 min-w-0'>
+                                        <div class='font-semibold text-brand-dark leading-snug tracking-[-0.03em]'>
+                                            {talk.title}
+                                        </div>
+                                        <div class='text-sm text-brand-blue mt-1 tracking-[-0.02em]'>
+                                            {(talk as any).speaker}
+                                        </div>
+                                        <div class='text-sm text-[#4a5a75] mt-2 leading-[1.65] tracking-[-0.01em]'>
+                                            <Fragment set:html={(talk as any).description} />
+                                        </div>
+                                    </div>
+                                </li>
+                            )
+                        )}
+                    </ul>
+                </div>
+            ))
+        }
+    </main>
+
+    <script>
+        const tabs = document.querySelectorAll<HTMLButtonElement>('.day-tab');
+        const panels = document.querySelectorAll<HTMLElement>('.day-panel');
+
+        tabs.forEach((tab, i) => {
+            tab.addEventListener('click', () => {
+                tabs.forEach((t) => {
+                    t.classList.remove('bg-brand-blue', 'text-white', 'border-brand-blue');
+                    t.classList.add('bg-white', 'text-[#a7b8d0]', 'border-border');
+                    t.setAttribute('aria-selected', 'false');
+                });
+                tab.classList.remove('bg-white', 'text-[#a7b8d0]', 'border-border');
+                tab.classList.add('bg-brand-blue', 'text-white', 'border-brand-blue');
+                tab.setAttribute('aria-selected', 'true');
+                panels.forEach((p, j) => {
+                    p.classList.toggle('hidden', j !== i);
+                });
+            });
+        });
+    </script>
+</BaseLayout>
