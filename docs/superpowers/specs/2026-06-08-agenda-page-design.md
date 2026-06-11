@@ -170,7 +170,7 @@ pluie
 作为 Nix 生态当中最有名的「预览功能」（experimental feature），Flakes 已经被大量的 Nix 用户以及一些第三方软件（如 Determinate Nix 安装器）视为 Nix 使用体验中不可或缺的一环。那么，它究竟是为什么到现在仍然没有成为原版 Nix 开箱即用的部分呢？在轻松管理第三方库版本、组织系统配置和软件包定义等种种优势背后，都有哪些技术问题使其迟迟不能够摆脱「不稳定性」？
 
 14:50 – 15:20 Why NixOS is the Best Distro to Grow a New OS Kernel
-田洪亮
+姜剑峰
 Linux has been the most successful open-source OS kernel for the last 30 years. So why build a brand-new, general-purpose OS kernel in 2020s — and why raise it on NixOS?
 This talk tells the story of Asterinas, a Linux-compatible OS kernel written from scratch in Rust, and Asterinas NixOS, its first distribution. It answers two questions. First, why a new kernel at all? Everyone now agrees the kernel's future is Rust — the real question is how. Linux takes the incremental path (Rust for Linux); Asterinas takes the clean-slate path, using a novel framekernel architecture that confines unsafe Rust to a tiny, auditable core while keeping the rest of the kernel in safe Rust. The result is the speed of a monolithic kernel and the security of a microkernel. Second, why grow it on NixOS? Because nearly every hard problem a half-finished kernel creates has a one-paragraph answer in Nix: declarative overlays patch around an incomplete ABI without forking nixpkgs; a ~20-line Nix expression bakes our kernel into a stock NixOS installer; nixpkgs itself becomes the largest real-world conformance suite we could ask for.
 You'll leave knowing what a framekernel is, how Asterinas differs from Linux, and why NixOS may be the best incubator for any new Linux-compatible kernel. No kernel background required.
