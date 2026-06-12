@@ -179,13 +179,13 @@
           "talks": [
             {
               "timeStart": "10:00",
-              "timeEnd": "11:45",
+              "timeEnd": "11:30",
               "title": "Nix / NixOS 入门",
               "speaker": "Prince213",
               "description": "开场 + NixOS 入门介绍"
             },
             {
-              "timeStart": "11:45",
+              "timeStart": "11:30",
               "timeEnd": "12:00",
               "title": "PGP签名派对",
               "speaker": "Cryolitia",
@@ -471,13 +471,13 @@
           "talks": [
             {
               "timeStart": "10:00",
-              "timeEnd": "11:45",
+              "timeEnd": "11:30",
               "title": "Nix / NixOS 入门",
               "speaker": "Prince213",
               "description": "开场 + NixOS 入门介绍"
             },
             {
-              "timeStart": "11:45",
+              "timeStart": "11:30",
               "timeEnd": "12:00",
               "title": "PGP签名派对",
               "speaker": "Cryolitia",
